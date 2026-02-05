@@ -1,0 +1,9 @@
+node_modules
+dist
+.DS_Store
+.local
+server/public
+vite.config.ts.*
+*.tar.gz
+# Snyk Security Extension - AI Rules (auto-generated)
+.github/instructions/snyk_rules.instructions.md

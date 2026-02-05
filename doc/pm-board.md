@@ -1,0 +1,102 @@
+# PM Board
+
+## Tasks
+
+- Task: Initialize governance docs
+  - Owner: Roo
+  - Priority: P0
+  - Status: In Progress
+  - Acceptance Criteria:
+    - Core governance docs exist in `./doc/`.
+  - Verification Steps:
+    - Confirm files exist in `./doc/`.
+  - Risks/Dependencies: None
+  - Timestamps:
+    - Created: 2026-01-31T02:55:40Z
+
+- Task: MinecorePortal full assessment (codebase, UI/UX, marketing, SEO, sales, CTA, design)
+  - Owner: Roo
+  - Priority: P0
+  - Status: Done
+  - Acceptance Criteria:
+    - Assessment report created in `./doc/assessment-report.md`.
+    - Findings cover UI/UX, marketing, SEO, sales, CTA, design system.
+  - Verification Steps:
+    - Review report content and referenced evidence files.
+  - Risks/Dependencies:
+    - PRD missing; assessment is informational only.
+  - Timestamps:
+    - Created: 2026-01-31T03:39:10Z
+    - Completed: 2026-01-31T03:39:36Z
+
+- Task: Core Source Model PRD + Architecture (draft v0)
+  - Owner: Roo
+  - Priority: P0
+  - Status: Done
+  - Acceptance Criteria:
+    - PRD draft updated for Core Source Model.
+    - Architecture draft updated for Core Source Model.
+  - Verification Steps:
+    - Read `doc/PRD.md` and `doc/architecture.md` for completeness.
+  - Risks/Dependencies:
+    - Pending owner inputs for industry focus, pricing tiers, KPIs, and engagement duration.
+  - Timestamps:
+    - Created: 2026-01-31T04:31:50Z
+    - Completed: 2026-01-31T04:33:18Z
+
+- Task: 90-Day Operating Plan (Core Alignment)
+  - Owner: Roo
+  - Priority: P0
+  - Status: Done
+  - Acceptance Criteria:
+    - 90-day plan documented in `doc/dev-plan.md`.
+    - Phases, actions, and success criteria captured.
+  - Verification Steps:
+    - Review `doc/dev-plan.md` for completeness.
+  - Risks/Dependencies:
+    - Pending owner inputs for industry focus, pricing tiers, KPIs, engagement duration.
+  - Timestamps:
+    - Created: 2026-01-31T04:33:20Z
+    - Completed: 2026-01-31T04:36:16Z
+
+- Task: Sales conversation & qualification logic (Core Alignment)
+  - Owner: Roo
+  - Priority: P0
+  - Status: Done
+  - Acceptance Criteria:
+    - Sales qualification logic documented in `doc/sales-qualification.md`.
+  - Verification Steps:
+    - Review `doc/sales-qualification.md` for completeness.
+  - Risks/Dependencies:
+    - Pending owner inputs for pricing tiers and KPI definitions.
+  - Timestamps:
+    - Created: 2026-01-31T04:36:17Z
+    - Completed: 2026-01-31T04:39:50Z
+
+- Task: Business model & operating plan (Core Alignment)
+  - Owner: Roo
+  - Priority: P0
+  - Status: Done
+  - Acceptance Criteria:
+    - Business model documented in `doc/business-model.md`.
+  - Verification Steps:
+    - Review `doc/business-model.md` for completeness.
+  - Risks/Dependencies:
+    - Pending owner inputs for pricing tiers and KPI definitions.
+  - Timestamps:
+    - Created: 2026-01-31T04:39:51Z
+    - Completed: 2026-01-31T04:41:55Z
+
+- Task: Website Bold Refresh (Home Only) — PRD + Architecture
+  - Owner: Roo
+  - Priority: P0
+  - Status: In Progress
+  - Acceptance Criteria:
+    - PRD section added to `doc/PRD.md`.
+    - Architecture section added to `doc/architecture.md`.
+  - Verification Steps:
+    - Review `doc/PRD.md` and `doc/architecture.md` for bold refresh scope.
+  - Risks/Dependencies:
+    - Pending final hero copy and CTA label.
+  - Timestamps:
+    - Created: 2026-01-31T04:41:56Z
