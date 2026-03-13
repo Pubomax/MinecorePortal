@@ -10,7 +10,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-[#0B132B] border-b border-[#1E293B] sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -24,16 +24,16 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/services" className="text-gray-600 hover:text-black font-medium transition-colors">
+            <Link href="/services" className="text-gray-300 hover:text-white font-medium transition-colors">
               {t('services')}
             </Link>
-            <Link href="/about" className="text-gray-600 hover:text-black font-medium transition-colors">
+            <Link href="/about" className="text-gray-300 hover:text-white font-medium transition-colors">
               {t('about')}
             </Link>
-            <Link href="/pricing" className="text-gray-600 hover:text-black font-medium transition-colors">
+            <Link href="/pricing" className="text-gray-300 hover:text-white font-medium transition-colors">
               {t('pricing')}
             </Link>
-            <Link href="/contact" className="text-gray-600 hover:text-black font-medium transition-colors">
+            <Link href="/contact" className="text-gray-300 hover:text-white font-medium transition-colors">
               {t('contact')}
             </Link>
           </nav>
@@ -53,27 +53,27 @@ export function Header() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
+            <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-xl text-white`}></i>
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} absolute top-full left-0 right-0 bg-white border-t border-gray-200`}>
+        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} absolute top-full left-0 right-0 bg-[#0B132B] border-t border-[#1E293B]`}>
           <div className="px-4 py-6 space-y-4">
-            <Link href="/services" className="block text-gray-600 hover:text-black font-medium py-2" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/services" className="block text-gray-300 hover:text-white font-medium py-2" onClick={() => setIsMenuOpen(false)}>
               {t('services')}
             </Link>
-            <Link href="/about" className="block text-gray-600 hover:text-black font-medium py-2" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/about" className="block text-gray-300 hover:text-white font-medium py-2" onClick={() => setIsMenuOpen(false)}>
               {t('about')}
             </Link>
-            <Link href="/pricing" className="block text-gray-600 hover:text-black font-medium py-2" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/pricing" className="block text-gray-300 hover:text-white font-medium py-2" onClick={() => setIsMenuOpen(false)}>
               {t('pricing')}
             </Link>
-            <Link href="/contact" className="block text-gray-600 hover:text-black font-medium py-2" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/contact" className="block text-gray-300 hover:text-white font-medium py-2" onClick={() => setIsMenuOpen(false)}>
               {t('contact')}
             </Link>
             
-            <div className="pt-4 border-t border-gray-200">
+            <div className="pt-4 border-t border-[#1E293B]">
               <LanguageToggle />
               <div className="mt-4" onClick={() => setIsMenuOpen(false)}>
                 <ConsultationModal 

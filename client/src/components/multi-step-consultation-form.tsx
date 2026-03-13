@@ -729,7 +729,7 @@ export function MultiStepConsultationForm() {
               <Button
                 type="button"
                 onClick={handleNext}
-                className="px-8 bg-black text-white hover:bg-gray-800"
+                className="px-8 bg-[#FACC15] text-black hover:bg-yellow-400 font-semibold"
               >
                 {t('nextStep')}
               </Button>
@@ -737,7 +737,7 @@ export function MultiStepConsultationForm() {
               <Button
                 type="submit"
                 disabled={mutation.isPending || currentStep !== 3}
-                className="px-8 bg-black text-white hover:bg-gray-800"
+                className="px-8 bg-[#FACC15] text-black hover:bg-yellow-400 font-semibold"
                 onClick={(e) => {
                   if (currentStep !== 3) {
                     e.preventDefault();

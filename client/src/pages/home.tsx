@@ -83,8 +83,8 @@ export default function Home() {
               {/* Problem 1 */}
               <Card className="border-0 shadow-sm">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
-                    <i className="fas fa-phone text-red-600 text-xl"></i>
+                  <div className="w-12 h-12 bg-[#FACC15] rounded-lg flex items-center justify-center mb-6">
+                    <i className="fas fa-phone text-black text-xl"></i>
                   </div>
                   <h3 className="font-display text-xl mb-4">{t('customerSupportTrap')}</h3>
                   <p className="text-gray-600 mb-6">
@@ -107,8 +107,8 @@ export default function Home() {
               {/* Problem 2 */}
               <Card className="border-0 shadow-sm">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
-                    <i className="fas fa-dollar-sign text-red-600 text-xl"></i>
+                  <div className="w-12 h-12 bg-[#FACC15] rounded-lg flex items-center justify-center mb-6">
+                    <i className="fas fa-dollar-sign text-black text-xl"></i>
                   </div>
                   <h3 className="font-display text-xl mb-4">{t('revenueCeiling')}</h3>
                   <p className="text-gray-600 mb-6">
@@ -131,8 +131,8 @@ export default function Home() {
               {/* Problem 3 */}
               <Card className="border-0 shadow-sm">
                 <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
-                    <i className="fas fa-sync text-red-600 text-xl"></i>
+                  <div className="w-12 h-12 bg-[#FACC15] rounded-lg flex items-center justify-center mb-6">
+                    <i className="fas fa-sync text-black text-xl"></i>
                   </div>
                   <h3 className="font-display text-xl mb-4">{t('operationalChaos')}</h3>
                   <p className="text-gray-600 mb-6">
@@ -168,8 +168,8 @@ export default function Home() {
               {/* Module 1: Chatbot */}
               <Card className="border-2 border-gray-200 hover:border-black transition-colors" data-testid="card-module-chatbot">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <i className="fas fa-comments text-blue-600 text-2xl"></i>
+                  <div className="w-16 h-16 bg-[#1E293B] rounded-xl flex items-center justify-center mb-4 mx-auto">
+                    <i className="fas fa-comments text-[#FACC15] text-2xl"></i>
                   </div>
                   <h3 className="font-display text-xl mb-3">{t('chatbotModule')}</h3>
                   <p className="text-gray-600 text-sm">{t('chatbotModuleDescription')}</p>
@@ -179,8 +179,8 @@ export default function Home() {
               {/* Module 2: Voicebot */}
               <Card className="border-2 border-gray-200 hover:border-black transition-colors" data-testid="card-module-voicebot">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <i className="fas fa-phone text-green-600 text-2xl"></i>
+                  <div className="w-16 h-16 bg-[#1E293B] rounded-xl flex items-center justify-center mb-4 mx-auto">
+                    <i className="fas fa-phone text-[#FACC15] text-2xl"></i>
                   </div>
                   <h3 className="font-display text-xl mb-3">{t('voicebotModule')}</h3>
                   <p className="text-gray-600 text-sm">{t('voicebotModuleDescription')}</p>
@@ -190,8 +190,8 @@ export default function Home() {
               {/* Module 3: CRM */}
               <Card className="border-2 border-gray-200 hover:border-black transition-colors" data-testid="card-module-crm">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <i className="fas fa-users text-purple-600 text-2xl"></i>
+                  <div className="w-16 h-16 bg-[#1E293B] rounded-xl flex items-center justify-center mb-4 mx-auto">
+                    <i className="fas fa-users text-[#FACC15] text-2xl"></i>
                   </div>
                   <h3 className="font-display text-xl mb-3">{t('crmModule')}</h3>
                   <p className="text-gray-600 text-sm">{t('crmModuleDescription')}</p>
@@ -201,8 +201,8 @@ export default function Home() {
               {/* Module 4: Automations */}
               <Card className="border-2 border-gray-200 hover:border-black transition-colors" data-testid="card-module-automations">
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <i className="fas fa-cogs text-orange-600 text-2xl"></i>
+                  <div className="w-16 h-16 bg-[#1E293B] rounded-xl flex items-center justify-center mb-4 mx-auto">
+                    <i className="fas fa-cogs text-[#FACC15] text-2xl"></i>
                   </div>
                   <h3 className="font-display text-xl mb-3">{t('automationsModule')}</h3>
                   <p className="text-gray-600 text-sm">{t('automationsModuleDescription')}</p>
@@ -237,8 +237,8 @@ export default function Home() {
               {/* Tech 2: Kommo CRM */}
               <Card className="border-0 shadow-lg">
                 <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-blue-600 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                    <i className="fas fa-database text-white text-3xl"></i>
+                  <div className="w-20 h-20 bg-[#0B132B] border border-[#FACC15] rounded-xl flex items-center justify-center mb-6 mx-auto">
+                    <i className="fas fa-database text-[#FACC15] text-3xl"></i>
                   </div>
                   <h3 className="font-display text-2xl mb-4">Kommo CRM</h3>
                   <p className="text-gray-600">{t('komomCrmDescription')}</p>
@@ -248,8 +248,8 @@ export default function Home() {
               {/* Tech 3: OpenAI */}
               <Card className="border-0 shadow-lg">
                 <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-green-600 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                    <i className="fas fa-brain text-white text-3xl"></i>
+                  <div className="w-20 h-20 bg-[#0B132B] border border-[#FACC15] rounded-xl flex items-center justify-center mb-6 mx-auto">
+                    <i className="fas fa-brain text-[#FACC15] text-3xl"></i>
                   </div>
                   <h3 className="font-display text-2xl mb-4">OpenAI</h3>
                   <p className="text-gray-600">{t('openAiDescription')}</p>
@@ -300,12 +300,14 @@ export default function Home() {
               </div>
               
               <div className="relative">
-                <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl aspect-square flex items-center justify-center overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
-                    alt="Minecore founder - AI automation specialist Montreal"
-                    className="w-full h-full object-cover"
-                  />
+                {/* TODO: Replace with real photo of Thierry — add /public/thierry.jpg */}
+                <div className="bg-gradient-to-br from-[#0D1F3C] to-[#0B132B] rounded-2xl aspect-square flex items-center justify-center overflow-hidden border border-[#1E293B]">
+                  <div className="flex flex-col items-center justify-center text-center p-8">
+                    <div className="w-24 h-24 bg-[#1E293B] rounded-full flex items-center justify-center mb-4">
+                      <i className="fas fa-user text-[#FACC15] text-4xl"></i>
+                    </div>
+                    <span className="text-gray-400 text-sm">Photo — Thierry Bijou</span>
+                  </div>
                 </div>
                 
                 <div className="absolute -bottom-4 left-4 bg-white p-4 rounded-lg shadow-lg border">
