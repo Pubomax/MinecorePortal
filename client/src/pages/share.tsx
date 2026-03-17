@@ -103,7 +103,7 @@ CONTACT & NEXT STEPS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🌐 Website: minecoregroup.com
 📧 Free Consultation: Book online at minecoregroup.com/contact
-📍 Address: 1655 rue du grand pic, Laval, QC H7P 0K8
+📍 Address: 1655 rue du grand pic, suite 301, Laval, QC H7P 0K8
 🗣️ Languages: English & French
 
 Ready to cut your workload by 70% and boost revenue by 40%?

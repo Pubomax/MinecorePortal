@@ -280,7 +280,7 @@ CONTACT INFORMATION
 Website: minecoregroup.com
 Email: info@minecoregroup.com
 Phone: Contact through website
-Address: 1655 rue du grand pic, Laval, QC H7P 0K8
+Address: 1655 rue du grand pic, suite 301, Laval, QC H7P 0K8
 
 Services Available: English & French
 Service Area: Montreal, Quebec (Primary) | North America (Remote)
