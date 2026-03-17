@@ -1,226 +1,299 @@
-import { useLanguage } from "@/hooks/use-language";
+import { Link } from "wouter";
+import { Globe2, MapPin, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ConsultationModal } from "@/components/consultation-modal";
-import { Link } from "wouter";
+import { useLanguage } from "@/hooks/use-language";
+import {
+  MarketingContainer,
+  MarketingHero,
+  Reveal,
+  SectionHeader,
+  SuitePreview,
+  SurfaceCard,
+} from "@/components/marketing";
 
 export default function About() {
   const { t } = useLanguage();
 
+  const principles = [
+    {
+      title: t("identify"),
+      description: t("identifyDescription"),
+    },
+    {
+      title: t("implement"),
+      description: t("implementDescription"),
+    },
+    {
+      title: t("optimize"),
+      description: t("optimizeDescription"),
+    },
+  ];
+
+  const values = [
+    {
+      title: t("authenticity"),
+      description: t("authenticityDescription"),
+    },
+    {
+      title: t("speed"),
+      description: t("speedDescription"),
+    },
+    {
+      title: t("partnership"),
+      description: t("partnershipDescription"),
+    },
+    {
+      title: t("results"),
+      description: t("resultsDescription"),
+    },
+  ];
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-black text-white py-24 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-display text-5xl lg:text-6xl leading-tight mb-8">
-              {t('aboutTitle')}<br />
-              <span className="text-gray-300">{t('aboutSubtitle')}</span>
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
-              {t('aboutDescription')}
-            </p>
-            
-            <ConsultationModal 
-              triggerText={t('workWithUs')}
-              size="lg" 
-              className="bg-white text-black hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-            />
+    <div className="pb-12">
+      <MarketingHero
+        eyebrow={t("eyebrowAbout")}
+        title={
+          <>
+            {t("aboutTitle")}
+            <br />
+            <span className="text-slate-500">{t("aboutSubtitle")}</span>
+          </>
+        }
+        description={t("aboutDescription")}
+        primaryAction={
+          <ConsultationModal
+            triggerText={t("workWithUs")}
+            className="marketing-button-primary h-12 px-6 text-sm font-semibold"
+          />
+        }
+        secondaryAction={
+          <Link
+            href="/contact"
+            className="marketing-button-secondary inline-flex h-12 items-center justify-center px-6 text-sm font-semibold"
+          >
+            {t("contact")}
+          </Link>
+        }
+        stats={[
+          { label: t("aboutStatFoundedLabel"), value: "2024" },
+          { label: t("aboutStatDeliveryLabel"), value: t("aboutStatDeliveryValue") },
+          { label: t("aboutStatSupportLabel"), value: "FR / EN" },
+        ]}
+        aside={
+          <SuitePreview
+            accentLabel={t("aboutSuiteAccent")}
+            status={t("aboutSuiteStatus")}
+            title={t("aboutSuiteTitle")}
+            items={[
+              { label: t("aboutSuiteItem1Label"), value: "70%" },
+              { label: t("aboutSuiteItem2Label"), value: "40%" },
+              { label: t("aboutSuiteItem3Label"), value: "2-3 " + t("weeksSuffix") },
+            ]}
+          />
+        }
+      />
+
+      <section className="py-14 sm:py-20">
+        <MarketingContainer>
+          <div className="grid gap-10 lg:grid-cols-[1fr_.95fr] lg:items-center">
+            <Reveal className="space-y-8">
+              <SectionHeader
+                eyebrow={t("eyebrowOrigin")}
+                title={t("fromBurnoutBreakthrough")}
+                description={t("foundedIn2024")}
+              />
+
+              <SurfaceCard className="rounded-[30px] p-6">
+                <p className="text-base leading-8 text-slate-600">{t("despiteGrowingRevenue")}</p>
+                <div className="marketing-subpanel mt-6 p-5">
+                  <div className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+                    {t("turningPoint")}
+                  </div>
+                  <p className="mt-4 text-lg leading-8 text-slate-800">"{t("turningPointQuote")}"</p>
+                </div>
+              </SurfaceCard>
+            </Reveal>
+
+            <Reveal delay={0.08}>
+              <SurfaceCard className="overflow-hidden rounded-[34px] p-3">
+                <div className="rounded-[28px] bg-[linear-gradient(135deg,#13213a,#101828)] p-6 text-white">
+                  <div className="flex items-center justify-between">
+                    <div className="marketing-chip border-white/10 bg-white/8 text-white/70">
+                      {t("founderLabel")}
+                    </div>
+                    <div className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-white/72">
+                      Laval, QC
+                    </div>
+                  </div>
+                  <div className="mt-6 rounded-[24px] border border-white/10 bg-white/6 p-6">
+                    <div className="font-display text-3xl tracking-[-0.04em]">Thierry Bijou</div>
+                    <p className="mt-3 text-sm leading-7 text-white/60">{t("founderBio")}</p>
+                  </div>
+                  <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                    <div className="rounded-[22px] border border-white/10 bg-white/8 p-4">
+                      <div className="text-xs uppercase tracking-[0.24em] text-white/60">
+                        {t("founderStat1Label")}
+                      </div>
+                      <div className="mt-3 font-display text-4xl tracking-[-0.05em]">2024</div>
+                    </div>
+                    <div className="rounded-[22px] border border-white/10 bg-white/8 p-4">
+                      <div className="text-xs uppercase tracking-[0.24em] text-white/60">
+                        {t("founderStat2Label")}
+                      </div>
+                      <div className="mt-3 font-display text-4xl tracking-[-0.05em]">FR / EN</div>
+                    </div>
+                  </div>
+                </div>
+              </SurfaceCard>
+            </Reveal>
           </div>
-        </div>
+        </MarketingContainer>
       </section>
 
-      {/* Our Story */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-              <div>
-                <h2 className="font-display text-4xl mb-6">{t('fromBurnoutBreakthrough')}</h2>
-                
-                <p className="text-lg text-gray-600 mb-6">
-                  {t('foundedIn2024')}
-                </p>
-                
-                <p className="text-lg text-gray-600 mb-8">
-                  {t('despiteGrowingRevenue')}
-                </p>
-                
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="font-semibold text-lg mb-4">{t('turningPoint')}</h3>
-                  <p className="text-gray-600">
-                    "{t('turningPointQuote')}"
-                  </p>
-                </div>
-              </div>
-              
-              <div className="relative">
-                <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl aspect-square flex items-center justify-center overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" 
-                    alt="Company founder - Entrepreneur and AI automation specialist"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                
-                <div className="absolute -bottom-4 left-4 bg-white p-4 rounded-lg shadow-lg border">
-                  <div className="text-center">
-                    <div className="font-display text-xl">Montreal</div>
-                    <div className="text-sm text-gray-600">{t('foundedMontreal')}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section className="py-14 sm:py-20">
+        <MarketingContainer className="space-y-10">
+          <SectionHeader
+            eyebrow={t("eyebrowOperatingProof")}
+            title={t("ourPersonalTransformation")}
+            description={t("helpFellowEntrepreneurs")}
+            align="center"
+          />
 
-            {/* Transformation Stats */}
-            <div className="bg-black text-white p-12 rounded-2xl mb-20">
-              <h3 className="font-display text-3xl mb-8 text-center">{t('ourPersonalTransformation')}</h3>
-              
-              <div className="grid md:grid-cols-3 gap-8 text-center">
-                <div>
-                  <div className="font-display text-4xl mb-2">70%</div>
-                  <div className="text-gray-300">{t('weeklyWorkloadReduction')}</div>
-                  <p className="text-sm text-gray-400 mt-2">{t('from80HoursTo25')}</p>
-                </div>
-                <div>
-                  <div className="font-display text-4xl mb-2">40%</div>
-                  <div className="text-gray-300">{t('revenueIncrease')}</div>
-                  <p className="text-sm text-gray-400 mt-2">{t('workingLessEarningMore')}</p>
-                </div>
-                <div>
-                  <div className="font-display text-4xl mb-2">2-3</div>
-                  <div className="text-gray-300">{t('weeksToImplement')}</div>
-                  <p className="text-sm text-gray-400 mt-2">{t('quickWinsCompound')}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Our Mission */}
-            <div className="text-center mb-20">
-              <h2 className="font-display text-4xl mb-8">{t('ourMission')}</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                {t('helpFellowEntrepreneurs')}
-              </p>
-              
-              <div className="bg-gray-50 p-8 rounded-xl max-w-2xl mx-auto">
-                <h3 className="font-semibold text-xl mb-4">{t('whyWereDifferent')}</h3>
-                <ul className="text-left space-y-3 text-gray-600">
-                  <li>• {t('entrepreneurToEntrepreneur')}</li>
-                  <li>• {t('provenResults')}</li>
-                  <li>• {t('noCorporateBs')}</li>
-                  <li>• {t('fastImplementation')}</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Our Approach */}
-            <div className="grid lg:grid-cols-3 gap-8 mb-20">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-black text-white rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <i className="fas fa-search text-2xl"></i>
-                </div>
-                <h3 className="font-display text-xl mb-4">{t('identify')}</h3>
-                <p className="text-gray-600">
-                  {t('identifyDescription')}
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-black text-white rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <i className="fas fa-cogs text-2xl"></i>
-                </div>
-                <h3 className="font-display text-xl mb-4">{t('implement')}</h3>
-                <p className="text-gray-600">
-                  {t('implementDescription')}
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-black text-white rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <i className="fas fa-chart-line text-2xl"></i>
-                </div>
-                <h3 className="font-display text-xl mb-4">{t('optimize')}</h3>
-                <p className="text-gray-600">
-                  {t('optimizeDescription')}
-                </p>
-              </div>
-            </div>
-
-            {/* Location & Values */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h3 className="font-display text-3xl mb-6">{t('proudlyMontrealBased')}</h3>
-                <p className="text-lg text-gray-600 mb-6">
-                  {t('locatedInLaval')}
-                </p>
-                
-                <div className="space-y-4 text-gray-600">
-                  <div className="flex items-center">
-                    <i className="fas fa-map-marker-alt text-black mr-3"></i>
-                    <span>3580 Blvd Saint-Elzear Ouest, Laval, QC H7P 0A2</span>
-                  </div>
-                  <div className="flex items-center">
-                    <i className="fas fa-globe text-black mr-3"></i>
-                    <span>{t('servingClientsNorthAmerica')}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <i className="fas fa-comments text-black mr-3"></i>
-                    <span>{t('bilingualService')}</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-black text-white p-8 rounded-2xl">
-                <h4 className="font-display text-2xl mb-6">{t('ourValues')}</h4>
-                
-                <div className="space-y-4">
-                  <div>
-                    <h5 className="font-semibold mb-2">{t('authenticity')}</h5>
-                    <p className="text-gray-300 text-sm">{t('authenticityDescription')}</p>
-                  </div>
-                  
-                  <div>
-                    <h5 className="font-semibold mb-2">{t('speed')}</h5>
-                    <p className="text-gray-300 text-sm">{t('speedDescription')}</p>
-                  </div>
-                  
-                  <div>
-                    <h5 className="font-semibold mb-2">{t('partnership')}</h5>
-                    <p className="text-gray-300 text-sm">{t('partnershipDescription')}</p>
-                  </div>
-                  
-                  <div>
-                    <h5 className="font-semibold mb-2">{t('results')}</h5>
-                    <p className="text-gray-300 text-sm">{t('resultsDescription')}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {[
+              ["70%", t("weeklyWorkloadReduction"), t("from80HoursTo25")],
+              ["40%", t("revenueIncrease"), t("workingLessEarningMore")],
+              ["2-3", t("weeksToImplement"), t("quickWinsCompound")],
+            ].map(([value, label, copy], index) => (
+              <Reveal key={label} delay={index * 0.08}>
+                <SurfaceCard className="h-full rounded-[30px] p-6">
+                  <div className="font-display text-6xl tracking-[-0.06em] text-slate-950">{value}</div>
+                  <div className="mt-4 text-base font-semibold text-slate-900">{label}</div>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{copy}</p>
+                </SurfaceCard>
+              </Reveal>
+            ))}
           </div>
-        </div>
+        </MarketingContainer>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-black text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-display text-4xl lg:text-5xl mb-6">
-              {t('readyForBreakthrough')}
-            </h2>
-            <p className="text-xl text-gray-300 mb-12">
-              {t('entrepreneurToEntrepreneurTalk')}
-            </p>
-            
-            <Link href="/contact">
-              <Button 
-                size="lg" 
-                className="bg-white text-black hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-              >
-                {t('bookFreeConsultation')}
-              </Button>
-            </Link>
+      <section className="py-14 sm:py-20">
+        <MarketingContainer>
+          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+            <Reveal className="space-y-8">
+              <SectionHeader
+                eyebrow={t("eyebrowMission")}
+                title={t("ourMission")}
+                description={t("helpFellowEntrepreneurs")}
+              />
+
+              <SurfaceCard className="rounded-[30px] p-6">
+                <div className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+                  {t("whyWereDifferent")}
+                </div>
+                <div className="mt-5 grid gap-3">
+                  {[
+                    t("entrepreneurToEntrepreneur"),
+                    t("provenResults"),
+                    t("noCorporateBs"),
+                    t("fastImplementation"),
+                  ].map((point) => (
+                    <div
+                      key={point}
+                      className="flex items-center gap-3 rounded-[22px] border border-[rgba(16,24,40,0.08)] bg-white/70 px-4 py-3 text-sm font-medium text-slate-700"
+                    >
+                      <Sparkles className="h-4 w-4 text-[var(--brand-coral)]" />
+                      {point}
+                    </div>
+                  ))}
+                </div>
+              </SurfaceCard>
+            </Reveal>
+
+            <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-1">
+              {principles.map((principle, index) => (
+                <Reveal key={principle.title} delay={index * 0.08}>
+                  <SurfaceCard className="rounded-[28px] p-6">
+                    <div className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+                      0{index + 1}
+                    </div>
+                    <h3 className="mt-4 font-display text-3xl tracking-[-0.04em] text-slate-950">
+                      {principle.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">{principle.description}</p>
+                  </SurfaceCard>
+                </Reveal>
+              ))}
+            </div>
           </div>
-        </div>
+        </MarketingContainer>
+      </section>
+
+      <section className="py-14 sm:py-20">
+        <MarketingContainer>
+          <div className="grid gap-10 lg:grid-cols-[1fr_.95fr] lg:items-start">
+            <Reveal className="space-y-8">
+              <SectionHeader
+                eyebrow={t("eyebrowLocation")}
+                title={t("proudlyMontrealBased")}
+                description={t("locatedInLaval")}
+              />
+
+              <SurfaceCard className="rounded-[30px] p-6">
+                <div className="grid gap-4 text-sm leading-7 text-slate-600">
+                  <div className="flex items-center gap-3">
+                    <MapPin className="h-4 w-4 text-slate-950" />
+                    1655 Rue du Grand Pic, Laval, QC H7P 0K8
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Globe2 className="h-4 w-4 text-slate-950" />
+                    {t("servingClientsNorthAmerica")}
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Sparkles className="h-4 w-4 text-slate-950" />
+                    {t("bilingualService")}
+                  </div>
+                </div>
+              </SurfaceCard>
+            </Reveal>
+
+            <Reveal delay={0.08}>
+              <SurfaceCard className="rounded-[34px] bg-[linear-gradient(135deg,#111b2d,#1f365b)] p-6 text-white">
+                <div className="marketing-chip border-white/10 bg-white/8 text-white/72">
+                  {t("ourValues")}
+                </div>
+                <div className="mt-6 grid gap-4">
+                  {values.map((value) => (
+                    <div key={value.title} className="rounded-[22px] border border-white/10 bg-white/8 p-4">
+                      <div className="font-display text-2xl tracking-[-0.04em]">{value.title}</div>
+                      <p className="mt-2 text-sm leading-7 text-white/72">{value.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </SurfaceCard>
+            </Reveal>
+          </div>
+        </MarketingContainer>
+      </section>
+
+      <section className="py-14 sm:py-20">
+        <MarketingContainer>
+          <SurfaceCard className="rounded-[34px] p-8 text-center">
+            <div className="mx-auto max-w-3xl">
+              <div className="marketing-chip">{t("eyebrowNextStep")}</div>
+              <h2 className="mt-6 font-display text-4xl tracking-[-0.05em] text-slate-950 sm:text-5xl">
+                {t("readyForBreakthrough")}
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">{t("entrepreneurToEntrepreneurTalk")}</p>
+              <Link href="/contact">
+                <Button className="marketing-button-primary mt-8 h-12 px-6 text-sm font-semibold">
+                  {t("bookFreeConsultation")}
+                </Button>
+              </Link>
+            </div>
+          </SurfaceCard>
+        </MarketingContainer>
       </section>
     </div>
   );

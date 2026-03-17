@@ -1,10 +1,9 @@
 import { useState } from "react";
 declare const gtag: any;
 
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertConsultationSchema, type InsertConsultation } from "@shared/schema";
+import { insertConsultationSchema, type InsertConsultation } from "@/lib/consultation-schema";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,15 +12,14 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/hooks/use-language";
-import { apiRequest } from "@/lib/queryClient";
 import { calculateLeadScore } from "@/lib/lead-scoring";
 
 export function MultiStepConsultationForm() {
   const { toast } = useToast();
   const { t } = useLanguage();
-  const queryClient = useQueryClient();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<InsertConsultation>({
     resolver: zodResolver(insertConsultationSchema),
@@ -49,42 +47,51 @@ export function MultiStepConsultationForm() {
     },
   });
 
-  const mutation = useMutation({
-    mutationFn: async (data: InsertConsultation) => {
-      const response = await apiRequest("POST", "/api/consultations", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["/api/consultations"] });
+  const saveConsultation = async (data: InsertConsultation) => {
+    setIsSubmitting(true);
+
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 900));
+
+      const saved = localStorage.getItem("minecore-consultations");
+      const submissions = saved ? JSON.parse(saved) : [];
+
+      submissions.unshift({
+        ...data,
+        id: typeof crypto !== "undefined" && "randomUUID" in crypto ? crypto.randomUUID() : `${Date.now()}`,
+        createdAt: new Date().toISOString(),
+      });
+
+      localStorage.setItem("minecore-consultations", JSON.stringify(submissions.slice(0, 50)));
       setIsSubmitted(true);
 
-      // Google Ads conversion tracking
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17032394525',
-          'value': 1,
-          'currency': 'USD'
+      if (typeof gtag !== "undefined") {
+        gtag("event", "conversion", {
+          send_to: "AW-17032394525",
+          value: 1,
+          currency: "USD",
         });
-        gtag('event', 'submit_lead_form', {
-          'currency': 'USD',
-          'value': 1
+        gtag("event", "submit_lead_form", {
+          currency: "USD",
+          value: 1,
         });
       }
 
       toast({
-        title: t('applicationSubmitted'),
-        description: t('thankYouApplication'),
+        title: t("applicationSubmitted"),
+        description: t("thankYouApplication"),
       });
-    },
-    onError: (error) => {
+    } catch (error) {
       console.error("Consultation submission error:", error);
       toast({
         title: "Error",
         description: "Failed to submit application. Please try again.",
         variant: "destructive",
       });
-    },
-  });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const validateStep = async () => {
     const fields = getStepFields(currentStep);
@@ -124,7 +131,7 @@ export function MultiStepConsultationForm() {
     }
   };
 
-  const onSubmit = (data: InsertConsultation) => {
+  const onSubmit = async (data: InsertConsultation) => {
     // Prevent submission if not on step 3
     if (currentStep !== 3) {
       console.log('Form submission blocked: must complete all 3 steps');
@@ -142,16 +149,28 @@ export function MultiStepConsultationForm() {
 
     const leadScore = calculateLeadScore(data);
 
-    // Capture UTM Source if available
-    const utmSource = sessionStorage.getItem('utm_source');
-    const source = utmSource ? `Google Ads (${utmSource})` : "Website Form";
+    const utmEntries = [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_term",
+      "utm_content",
+    ]
+      .map((key) => [key, sessionStorage.getItem(key)] as const)
+      .filter(([, value]) => Boolean(value));
+
+    const source = utmEntries.length
+      ? `Google Ads | ${utmEntries
+          .map(([key, value]) => `${key}=${value}`)
+          .join(" | ")}`
+      : "Website Form";
 
     const dataWithScore = {
       ...data,
       leadScore,
       source
     };
-    mutation.mutate(dataWithScore);
+    await saveConsultation(dataWithScore);
   };
 
   if (isSubmitted) {
@@ -729,15 +748,15 @@ export function MultiStepConsultationForm() {
               <Button
                 type="button"
                 onClick={handleNext}
-                className="px-8 bg-[#FACC15] text-black hover:bg-yellow-400 font-semibold"
+                className="px-8 bg-black text-white hover:bg-gray-800"
               >
                 {t('nextStep')}
               </Button>
             ) : (
               <Button
                 type="submit"
-                disabled={mutation.isPending || currentStep !== 3}
-                className="px-8 bg-[#FACC15] text-black hover:bg-yellow-400 font-semibold"
+                disabled={isSubmitting || currentStep !== 3}
+                className="px-8 bg-black text-white hover:bg-gray-800"
                 onClick={(e) => {
                   if (currentStep !== 3) {
                     e.preventDefault();
@@ -746,7 +765,7 @@ export function MultiStepConsultationForm() {
                   }
                 }}
               >
-                {mutation.isPending ? t('submitting') : t('submitApplication')}
+                {isSubmitting ? t('submitting') : t('submitApplication')}
               </Button>
             )}
           </div>

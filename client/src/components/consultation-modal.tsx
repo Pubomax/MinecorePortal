@@ -28,18 +28,18 @@ export function ConsultationModal({
         </Button>
       </DialogTrigger>
       <DialogContent 
-        className="max-w-5xl max-h-[90vh] overflow-y-auto bg-white border border-gray-200 shadow-2xl"
-        style={{ backgroundColor: '#ffffff', backdropFilter: 'none' }}
+        className="max-h-[90vh] max-w-5xl overflow-y-auto rounded-[32px] border border-[rgba(16,24,40,0.08)] bg-[#fffaf3]/95 shadow-[0_40px_100px_rgba(15,23,42,0.22)]"
+        style={{ backgroundColor: 'rgba(255, 250, 243, 0.95)', backdropFilter: 'blur(18px)' }}
       >
-        <DialogHeader className="pb-4 bg-white">
-          <DialogTitle className="text-2xl font-display text-black">
-            Book Your Free Consultation
+        <DialogHeader className="rounded-[24px] border border-[rgba(16,24,40,0.08)] bg-white/70 p-5">
+          <DialogTitle className="text-2xl font-display text-slate-950">
+            {t('consultationModalTitle')}
           </DialogTitle>
-          <DialogDescription className="text-gray-600">
-            Complete our 3-step consultation form to receive a personalized automation strategy for your business.
+          <DialogDescription className="text-slate-600">
+            {t('consultationModalDesc')}
           </DialogDescription>
         </DialogHeader>
-        <div className="mt-4 bg-white">
+        <div className="mt-4 rounded-[28px] border border-[rgba(16,24,40,0.08)] bg-white/85 p-2">
           <MultiStepConsultationForm />
         </div>
       </DialogContent>

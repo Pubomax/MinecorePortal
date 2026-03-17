@@ -1,369 +1,586 @@
-import { useLanguage } from "@/hooks/use-language";
-import { MultiStepConsultationForm } from "@/components/multi-step-consultation-form";
-import { ConsultationModal } from "@/components/consultation-modal";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
+import {
+  ArrowRight,
+  BarChart3,
+  Bot,
+  Cable,
+  Cloud,
+  Container,
+  Database,
+  MessageSquareText,
+  Phone,
+  PhoneCall,
+  Sparkles,
+  Users,
+  Workflow,
+} from "lucide-react";
+import { motion } from "framer-motion";
+import { useLanguage } from "@/hooks/use-language";
+import { ConsultationModal } from "@/components/consultation-modal";
+import { MultiStepConsultationForm } from "@/components/multi-step-consultation-form";
+import {
+  ChatMockup,
+  CivicViewProductCard,
+  ExecProductCard,
+  FeatureItem,
+  MarketingContainer,
+  MarketingHero,
+  OperatorProductCard,
+  Reveal,
+  SectionHeader,
+  SuitePreview,
+  SurfaceCard,
+  WindowChrome,
+} from "@/components/marketing";
 
 export default function Home() {
   const { t } = useLanguage();
 
+  const problems = [
+    {
+      icon: MessageSquareText,
+      title: t("customerSupportTrap"),
+      description: t("customerSupportProblem"),
+      bullets: [t("aiChatbotsHandle"), t("smartEmailAutomation"), t("intelligentCallRouting")],
+      result: t("resultSave25Hours"),
+      accent: "from-[#fff1d8] to-[#ffe6b8]",
+    },
+    {
+      icon: Users,
+      title: t("revenueCeiling"),
+      description: t("revenueCeilingProblem"),
+      bullets: [t("automatedLeadResearchSol"), t("smartFollowUpSequences"), t("crmThatWorks")],
+      result: t("resultRevenueIncrease"),
+      accent: "from-[#ddf7ff] to-[#c3ecff]",
+    },
+    {
+      icon: Workflow,
+      title: t("operationalChaos"),
+      description: t("operationalChaosProblem"),
+      bullets: [t("automatedReportingSol"), t("intelligentTaskMgmt"), t("resourceOptimizationSol")],
+      result: t("result50PercentEfficiency"),
+      accent: "from-[#eaf4d7] to-[#d5eea5]",
+    },
+  ];
+
+  const modules = [
+    { icon: Bot, name: t("chatbotModule"), description: t("chatbotModuleDescription"), label: "01" },
+    { icon: PhoneCall, name: t("voicebotModule"), description: t("voicebotModuleDescription"), label: "02" },
+    { icon: Users, name: t("crmModule"), description: t("crmModuleDescription"), label: "03" },
+    { icon: Cable, name: t("automationsModule"), description: t("automationsModuleDescription"), label: "04" },
+  ];
+
+  const stackLayers = [
+    {
+      layer: t("techStackLayerOrchestration"),
+      tools: [
+        { name: "n8n", icon: Workflow, description: t("n8nDescription"), benefit: t("n8nBenefit") },
+        { name: "Make", icon: Cable, description: t("makeDescription"), benefit: t("makeBenefit") },
+      ],
+    },
+    {
+      layer: t("techStackLayerIntelligence"),
+      tools: [
+        { name: "OpenAI", icon: Sparkles, description: t("openAiDescription"), benefit: t("openAiBenefit") },
+        { name: "Kommo CRM", icon: Users, description: t("komomCrmDescription"), benefit: t("komomBenefit") },
+      ],
+    },
+    {
+      layer: t("techStackLayerCommunication"),
+      tools: [
+        { name: "Twilio", icon: Phone, description: t("twilioDescription"), benefit: t("twilioBenefit") },
+        { name: "WhatsApp API", icon: MessageSquareText, description: t("whatsappApiDescription"), benefit: t("whatsappApiBenefit") },
+      ],
+    },
+    {
+      layer: t("techStackLayerInfrastructure"),
+      tools: [
+        { name: "PostgreSQL", icon: Database, description: t("postgresDescription"), benefit: t("postgresBenefit") },
+        { name: "Docker", icon: Container, description: t("dockerDescription"), benefit: t("dockerBenefit") },
+        { name: "Vercel", icon: Cloud, description: t("vercelDescription"), benefit: t("vercelBenefit") },
+      ],
+    },
+  ];
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-black text-white py-24 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8">
-              <span className="bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium">
-                {t('lavalMontrealLocalExpert')}
-              </span>
-            </div>
-            
-            <h1 className="font-display text-5xl lg:text-7xl leading-tight mb-6">
-              {t('newHeroTitle')}<br />
-              <span className="text-gray-300">{t('newHeroSubtitle')}</span>
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
-              {t('newHeroDescription')}
+    <div className="pb-12">
+      {/* ═══ HERO ═══════════════════════════════════════════ */}
+      <MarketingHero
+        eyebrow={t("openclawBadge")}
+        title={
+          <>
+            {t("openclawHeroTitle1")}
+            <br />
+            <span className="text-slate-500">{t("openclawHeroTitle2")}</span>
+          </>
+        }
+        description={t("openclawHeroSubtitle")}
+        primaryAction={
+          <ConsultationModal
+            triggerText={t("openclawPrimaryCta")}
+            className="marketing-button-primary h-12 px-6 text-sm font-semibold"
+          />
+        }
+        secondaryAction={
+          <Link
+            href="/services"
+            className="marketing-button-secondary inline-flex h-12 items-center justify-center gap-2 px-6 text-sm font-semibold"
+          >
+            {t("openclawSecondaryCta")}
+          </Link>
+        }
+        stats={[
+          { label: t("setupFees"), value: "990$ - 1 900$" },
+          { label: t("monthlyPlans"), value: t("from500PerMonth") },
+          { label: t("launchSpeed"), value: "2-3 weeks" },
+        ]}
+        aside={
+          <SuitePreview
+            accentLabel={t("suitePreviewAccentLabel")}
+            status={t("suitePreviewStatus")}
+            title={t("suitePreviewTitle")}
+            items={[
+              { label: t("suitePreviewItem1Label"), value: t("suitePreviewItem1Value") },
+              { label: t("suitePreviewItem2Label"), value: t("suitePreviewItem2Value") },
+              { label: t("suitePreviewItem3Label"), value: t("suitePreviewItem3Value") },
+            ]}
+          />
+        }
+      />
+
+      {/* ═══ PRODUCT SUITE CARDS ════════════════════════════ */}
+      <MarketingContainer className="pb-8">
+        <div className="grid gap-6 md:grid-cols-2">
+          <Reveal>
+            <Link href="/services">
+              <SurfaceCard className="group cursor-pointer rounded-[30px] p-6 transition-all hover:shadow-[0_32px_80px_rgba(15,23,42,0.16)]">
+                <div className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">{t("aiSystemSupportLabel")}</div>
+                <h3 className="mt-4 font-display text-3xl tracking-[-0.04em] text-slate-950">
+                  {t("aiSystemSupportTitle1")}<br />{t("aiSystemSupportTitle2")}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{t("aiSystemSupportDesc")}</p>
+                <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-slate-500 group-hover:text-slate-950">
+                  {t("openclawSecondaryCta")} <ArrowRight className="h-4 w-4" />
+                </div>
+              </SurfaceCard>
+            </Link>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <Link href="/services">
+              <SurfaceCard className="group cursor-pointer rounded-[30px] p-6 transition-all hover:shadow-[0_32px_80px_rgba(15,23,42,0.16)]">
+                <div className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">{t("morpheusSuiteLabel")}</div>
+                <h3 className="mt-4 font-display text-3xl tracking-[-0.04em] text-slate-950">
+                  {t("morpheusSuiteTitle1")}<br />{t("morpheusSuiteTitle2")}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{t("morpheusSuiteDesc")}</p>
+                <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-slate-500 group-hover:text-slate-950">
+                  {t("exploreMorpheus")} <ArrowRight className="h-4 w-4" />
+                </div>
+              </SurfaceCard>
+            </Link>
+          </Reveal>
+        </div>
+      </MarketingContainer>
+
+      {/* ═══ EARLY-STAGE TRUST BAR ═══════════════════════ */}
+      <MarketingContainer className="pb-8">
+        <Reveal>
+          <SurfaceCard className="rounded-[32px] px-6 py-5 text-center">
+            <p className="text-sm leading-7 text-slate-500">
+              {t("earlyStageDisclaimer")}
             </p>
-            
-            {/* Pricing Model Highlight */}
-            <div className="bg-white/10 rounded-xl p-6 mb-12 max-w-3xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="text-left">
-                  <div className="text-sm text-gray-400 mb-2">{t('setupFees')}</div>
-                  <div className="font-display text-3xl">990$ - 1 900$</div>
-                  <div className="text-sm text-gray-400 mt-1">{t('oneTimeInstallation')}</div>
-                </div>
-                <div className="text-left">
-                  <div className="text-sm text-gray-400 mb-2">{t('monthlyPlans')}</div>
-                  <div className="font-display text-3xl">{t('from500PerMonth')}</div>
-                  <div className="text-sm text-gray-400 mt-1">{t('starterProGrowth')}</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <ConsultationModal 
-                triggerText={t('bookFreeConsultation')}
-                size="lg" 
-                className="bg-white text-black hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-                data-testid="button-book-consultation-hero"
-              />
-              <Link href="/pricing">
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg font-semibold"
-                  data-testid="button-view-pricing-hero"
-                >
-                  {t('viewPricingPlans')}
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Problem Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-4xl lg:text-5xl mb-6">
-                {t('threeProblemsKilling')}
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                {t('problemNarrative')}
-              </p>
-            </div>
+          </SurfaceCard>
+        </Reveal>
+      </MarketingContainer>
 
-            <div className="grid lg:grid-cols-3 gap-8">
-              {/* Problem 1 */}
-              <Card className="border-0 shadow-sm">
-                <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-[#FACC15] rounded-lg flex items-center justify-center mb-6">
-                    <i className="fas fa-phone text-black text-xl"></i>
-                  </div>
-                  <h3 className="font-display text-xl mb-4">{t('customerSupportTrap')}</h3>
-                  <p className="text-gray-600 mb-6">
-                    {t('customerSupportProblem')}
-                  </p>
-                  <div className="bg-black text-white p-4 rounded-lg">
-                    <div className="font-semibold mb-2">{t('ourSolution')}</div>
-                    <ul className="text-sm space-y-1">
-                      <li>{t('aiChatbotsHandle')}</li>
-                      <li>{t('smartEmailAutomation')}</li>
-                      <li>{t('intelligentCallRouting')}</li>
-                    </ul>
-                    <div className="mt-4 pt-4 border-t border-gray-700">
-                      <span className="font-bold">{t('resultSave25Hours')}</span>
+      {/* ═══ PROBLEMS ══════════════════════════════════════ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer className="space-y-10">
+          <SectionHeader
+            eyebrow={t("eyebrowSystemBottlenecks")}
+            title={t("threeProblemsKilling")}
+            description={t("problemNarrative")}
+            align="center"
+          />
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {problems.map((problem, index) => {
+              const Icon = problem.icon;
+              return (
+                <Reveal key={problem.title} delay={index * 0.08}>
+                  <SurfaceCard className="h-full rounded-[30px] p-6">
+                    <div
+                      className={`inline-flex h-14 w-14 items-center justify-center rounded-[18px] bg-gradient-to-br ${problem.accent} text-slate-950 shadow-[0_18px_30px_rgba(15,23,42,0.08)]`}
+                    >
+                      <Icon className="h-6 w-6" />
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Problem 2 */}
-              <Card className="border-0 shadow-sm">
-                <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-[#FACC15] rounded-lg flex items-center justify-center mb-6">
-                    <i className="fas fa-dollar-sign text-black text-xl"></i>
-                  </div>
-                  <h3 className="font-display text-xl mb-4">{t('revenueCeiling')}</h3>
-                  <p className="text-gray-600 mb-6">
-                    {t('revenueCeilingProblem')}
-                  </p>
-                  <div className="bg-black text-white p-4 rounded-lg">
-                    <div className="font-semibold mb-2">{t('ourSolution')}</div>
-                    <ul className="text-sm space-y-1">
-                      <li>{t('automatedLeadResearchSol')}</li>
-                      <li>{t('smartFollowUpSequences')}</li>
-                      <li>{t('crmThatWorks')}</li>
-                    </ul>
-                    <div className="mt-4 pt-4 border-t border-gray-700">
-                      <span className="font-bold">{t('resultRevenueIncrease')}</span>
+                    <div className="mt-6 space-y-4">
+                      <h3 className="font-display text-3xl tracking-[-0.04em] text-slate-950">{problem.title}</h3>
+                      <p className="text-base leading-8 text-slate-600">{problem.description}</p>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Problem 3 */}
-              <Card className="border-0 shadow-sm">
-                <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-[#FACC15] rounded-lg flex items-center justify-center mb-6">
-                    <i className="fas fa-sync text-black text-xl"></i>
-                  </div>
-                  <h3 className="font-display text-xl mb-4">{t('operationalChaos')}</h3>
-                  <p className="text-gray-600 mb-6">
-                    {t('operationalChaosProblem')}
-                  </p>
-                  <div className="bg-black text-white p-4 rounded-lg">
-                    <div className="font-semibold mb-2">{t('ourSolution')}</div>
-                    <ul className="text-sm space-y-1">
-                      <li>{t('automatedReportingSol')}</li>
-                      <li>{t('intelligentTaskMgmt')}</li>
-                      <li>{t('resourceOptimizationSol')}</li>
-                    </ul>
-                    <div className="mt-4 pt-4 border-t border-gray-700">
-                      <span className="font-bold">{t('result50PercentEfficiency')}</span>
+                    <div className="marketing-subpanel mt-6 p-5">
+                      <div className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">{t("ourSolution")}</div>
+                      <div className="mt-4 space-y-3">
+                        {problem.bullets.map((bullet) => (
+                          <div key={bullet} className="flex items-start gap-3 text-sm leading-7 text-slate-700">
+                            <span className="mt-2 h-2 w-2 rounded-full bg-slate-950" />
+                            {bullet}
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-5 rounded-2xl bg-slate-950 px-4 py-3 text-sm font-semibold text-white">{problem.result}</div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+                  </SurfaceCard>
+                </Reveal>
+              );
+            })}
           </div>
-        </div>
-      </section>
-      {/* Modules Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-4xl lg:text-5xl mb-6">{t('ourModules')}</h2>
-              <p className="text-xl text-gray-600">{t('standardizedModulesDescription')}</p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {/* Module 1: Chatbot */}
-              <Card className="border-2 border-gray-200 hover:border-black transition-colors" data-testid="card-module-chatbot">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-[#1E293B] rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <i className="fas fa-comments text-[#FACC15] text-2xl"></i>
-                  </div>
-                  <h3 className="font-display text-xl mb-3">{t('chatbotModule')}</h3>
-                  <p className="text-gray-600 text-sm">{t('chatbotModuleDescription')}</p>
-                </CardContent>
-              </Card>
-
-              {/* Module 2: Voicebot */}
-              <Card className="border-2 border-gray-200 hover:border-black transition-colors" data-testid="card-module-voicebot">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-[#1E293B] rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <i className="fas fa-phone text-[#FACC15] text-2xl"></i>
-                  </div>
-                  <h3 className="font-display text-xl mb-3">{t('voicebotModule')}</h3>
-                  <p className="text-gray-600 text-sm">{t('voicebotModuleDescription')}</p>
-                </CardContent>
-              </Card>
-
-              {/* Module 3: CRM */}
-              <Card className="border-2 border-gray-200 hover:border-black transition-colors" data-testid="card-module-crm">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-[#1E293B] rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <i className="fas fa-users text-[#FACC15] text-2xl"></i>
-                  </div>
-                  <h3 className="font-display text-xl mb-3">{t('crmModule')}</h3>
-                  <p className="text-gray-600 text-sm">{t('crmModuleDescription')}</p>
-                </CardContent>
-              </Card>
-
-              {/* Module 4: Automations */}
-              <Card className="border-2 border-gray-200 hover:border-black transition-colors" data-testid="card-module-automations">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-[#1E293B] rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <i className="fas fa-cogs text-[#FACC15] text-2xl"></i>
-                  </div>
-                  <h3 className="font-display text-xl mb-3">{t('automationsModule')}</h3>
-                  <p className="text-gray-600 text-sm">{t('automationsModuleDescription')}</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
+        </MarketingContainer>
       </section>
 
-      {/* Technology Stack Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-4xl lg:text-5xl mb-6">{t('ourTechStack')}</h2>
-              <p className="text-xl text-gray-600">{t('techStackDescription')}</p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Tech 1: n8n */}
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-black rounded-xl flex items-center justify-center mb-6 mx-auto">
-                    <i className="fas fa-project-diagram text-white text-3xl"></i>
-                  </div>
-                  <h3 className="font-display text-2xl mb-4">n8n</h3>
-                  <p className="text-gray-600">{t('n8nDescription')}</p>
-                </CardContent>
-              </Card>
-
-              {/* Tech 2: Kommo CRM */}
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-[#0B132B] border border-[#FACC15] rounded-xl flex items-center justify-center mb-6 mx-auto">
-                    <i className="fas fa-database text-[#FACC15] text-3xl"></i>
-                  </div>
-                  <h3 className="font-display text-2xl mb-4">Kommo CRM</h3>
-                  <p className="text-gray-600">{t('komomCrmDescription')}</p>
-                </CardContent>
-              </Card>
-
-              {/* Tech 3: OpenAI */}
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-[#0B132B] border border-[#FACC15] rounded-xl flex items-center justify-center mb-6 mx-auto">
-                    <i className="fas fa-brain text-[#FACC15] text-3xl"></i>
-                  </div>
-                  <h3 className="font-display text-2xl mb-4">OpenAI</h3>
-                  <p className="text-gray-600">{t('openAiDescription')}</p>
-                </CardContent>
-              </Card>
-            </div>
+      {/* ═══ AI PRODUCTS ═══════════════════════════════════ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer className="space-y-10">
+          <SectionHeader
+            eyebrow={t("eyebrowAiProducts")}
+            title={t("aiProductsSectionTitle")}
+            description={t("aiProductsSectionDescription")}
+            align="center"
+          />
+          <OperatorProductCard />
+          <div className="grid gap-6 md:grid-cols-2">
+            <ExecProductCard />
+            <CivicViewProductCard />
           </div>
-        </div>
+        </MarketingContainer>
       </section>
 
-      {/* Founder Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="mb-6">
-                  <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-                    {t('founderStoryBadge')}
-                  </span>
-                </div>
-                
-                <h2 className="font-display text-4xl mb-6">
-                  {t('from80HourWeeks')}
+      {/* ═══ WHAT YOU GET ═══════════════════════════════ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer className="space-y-10">
+          <SectionHeader
+            eyebrow={t("eyebrowWhatYouGet")}
+            title={t("whatYouGetTitle")}
+            description={t("whatYouGetDesc")}
+            align="center"
+          />
+          <Reveal>
+            <div className="grid gap-6 sm:grid-cols-3">
+              {[
+                { value: "2-3", suffix: t("weeksSuffix"), label: t("whatYouGetMetric1") },
+                { value: "90", suffix: t("daysSuffix"), label: t("whatYouGetMetric2") },
+                { value: "0", suffix: "", label: t("whatYouGetMetric3") },
+              ].map((m) => (
+                <SurfaceCard key={m.label} className="rounded-[28px] p-8 text-center">
+                  <div className="font-display text-6xl tracking-[-0.06em] text-slate-950">
+                    {m.value}<span className="text-3xl text-slate-400">{m.suffix}</span>
+                  </div>
+                  <div className="mt-3 text-sm text-slate-500">{m.label}</div>
+                </SurfaceCard>
+              ))}
+            </div>
+          </Reveal>
+        </MarketingContainer>
+      </section>
+
+      {/* ═══ DARK BANNER ══════════════════════════════════ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer>
+          <SurfaceCard className="rounded-[36px] bg-[linear-gradient(135deg,#111b2d,#1f365b)] p-8 text-center text-white sm:p-12">
+            <Reveal>
+              <div className="mx-auto max-w-3xl space-y-6">
+                <div className="marketing-chip border-white/12 bg-white/8 text-white/72">{t("eyebrowOneAiLayer")}</div>
+                <h2 className="font-display text-4xl leading-[0.96] tracking-[-0.05em] sm:text-5xl lg:text-6xl">
+                  {t("darkBannerTitle")}
                 </h2>
-                
-                <p className="text-lg text-gray-600 mb-8">
-                  {t('founderStoryText')}
+                <p className="mx-auto max-w-xl text-lg leading-8 text-white/60">
+                  {t("darkBannerDescription")}
                 </p>
-                
-                <div className="bg-gray-50 p-6 rounded-lg mb-8">
-                  <h3 className="font-semibold text-lg mb-4">{t('myTransformation')}</h3>
-                  <div className="grid grid-cols-2 gap-6">
-                    <div>
-                      <div className="font-display text-3xl text-black">70%</div>
-                      <div className="text-gray-600">{t('weeklyWorkloadCut')}</div>
+                <ConsultationModal
+                  triggerText={t("openclawPrimaryCta")}
+                  className="mt-4 inline-flex h-12 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-slate-950 transition-all hover:bg-white/90"
+                />
+              </div>
+            </Reveal>
+          </SurfaceCard>
+        </MarketingContainer>
+      </section>
+
+      {/* ═══ PLATFORM VISUALS ═════════════════════════════ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer className="space-y-10">
+          <SectionHeader
+            eyebrow={t("eyebrowPlatformInAction")}
+            title={t("platformInAction")}
+            description={t("platformInActionSubtitle")}
+            align="center"
+          />
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Chatbot UI */}
+            <Reveal>
+              <SurfaceCard className="overflow-hidden rounded-[28px] p-0">
+                <div className="bg-[linear-gradient(180deg,rgba(20,32,58,0.96),rgba(7,12,24,0.96))] p-5 text-white">
+                  <WindowChrome label="Clawbot · OpenClaw Chat" />
+                  <div className="mb-4 space-y-2.5">
+                    <div className="flex justify-end">
+                      <div className="max-w-[75%] rounded-xl rounded-tr-sm bg-white px-3 py-2 text-xs text-slate-950">Bonjour, comment puis-je obtenir un devis rapidement ?</div>
+                    </div>
+                    <div className="flex gap-1.5">
+                      <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-white/10"><Bot className="h-3 w-3 text-white/50" /></div>
+                      <div className="max-w-[75%] rounded-xl rounded-tl-sm bg-white/10 px-3 py-2 text-xs text-white/80">Bonjour ! Je suis Clawbot. Puis-je vous guider vers le bon forfait ?</div>
+                    </div>
+                    <div className="flex gap-1.5">
+                      <div className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-white/10"><Bot className="h-3 w-3 text-white/50" /></div>
+                      <div className="max-w-[75%] rounded-xl rounded-tl-sm bg-white/10 px-3 py-2 text-xs text-white/70">J'ai qualifié votre demande et créé un ticket dans Kommo CRM. ✓</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between border-t border-white/10 pt-3">
+                    <div className="flex items-center gap-1.5">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--brand-lime)]" />
+                      <span className="text-[10px] text-[var(--brand-lime)]">En ligne · 1.4s</span>
+                    </div>
+                    <span className="text-[10px] font-medium uppercase tracking-wider text-white/25">OpenClaw</span>
+                  </div>
+                </div>
+              </SurfaceCard>
+            </Reveal>
+
+            {/* Workflow UI */}
+            <Reveal delay={0.08}>
+              <SurfaceCard className="overflow-hidden rounded-[28px] p-0">
+                <div className="bg-[linear-gradient(180deg,rgba(20,32,58,0.96),rgba(7,12,24,0.96))] p-5 text-white">
+                  <WindowChrome label="BotClaw · n8n" />
+                  <div className="mb-3 flex items-center justify-between">
+                    <span className="text-[10px] uppercase tracking-wider text-white/30">Lead → Client Pipeline</span>
+                    <span className="text-[10px] font-medium text-[var(--brand-lime)]">● Active</span>
+                  </div>
+                  <div className="mb-4 flex items-center gap-1 overflow-x-auto pb-2">
+                    {["Email", "IA", "CRM", "Alerte", "RDV"].map((label, i) => (
+                      <div key={label} className="flex items-center gap-1 flex-shrink-0">
+                        <div className="text-center">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.06] mb-1">
+                            <Workflow className="h-4 w-4 text-white/50" />
+                          </div>
+                          <div className="text-[9px] text-white/25">{label}</div>
+                        </div>
+                        {i < 4 && <div className="mx-0.5 mb-3 text-sm text-white/15">›</div>}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="rounded-lg border border-[var(--brand-lime)]/15 bg-[var(--brand-lime)]/10 px-3 py-2 text-[10px] text-[var(--brand-lime)]">
+                    ✓ 347 runs today · 0 errors · 4.2 hrs saved
+                  </div>
+                  <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-3">
+                    <span className="text-[10px] text-white/20">n8n + OpenClaw</span>
+                    <span className="text-[10px] font-medium uppercase tracking-wider text-white/25">BotClaw</span>
+                  </div>
+                </div>
+              </SurfaceCard>
+            </Reveal>
+
+            {/* CRM UI */}
+            <Reveal delay={0.12}>
+              <SurfaceCard className="overflow-hidden rounded-[28px] p-0">
+                <div className="bg-[linear-gradient(180deg,rgba(20,32,58,0.96),rgba(7,12,24,0.96))] p-5 text-white">
+                  <WindowChrome label="Kommo CRM" />
+                  <div className="mb-4 grid grid-cols-3 gap-2.5">
+                    {[
+                      { stage: "New", count: 3, value: "$47.8K" },
+                      { stage: "Qualifying", count: 3, value: "$28.2K" },
+                      { stage: "Won ✓", count: 3, value: "$19.5K" },
+                    ].map((col) => (
+                      <div key={col.stage}>
+                        <div className="mb-2 text-[10px] text-white/25">{col.stage}</div>
+                        {[...Array(col.count)].map((_, i) => (
+                          <div key={i} className="mb-1 rounded-md border border-white/[0.05] bg-white/[0.04] p-1.5">
+                            <div className="mb-1 h-1 w-full rounded bg-white/15" />
+                            <div className="h-1 w-2/3 rounded bg-white/[0.08]" />
+                          </div>
+                        ))}
+                        <div className="mt-1.5 text-[10px] font-medium text-white/50">{col.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex items-center justify-between border-t border-white/10 pt-3">
+                    <span className="text-[10px] text-white/20">Zero lost prospects</span>
+                    <span className="text-[10px] font-medium uppercase tracking-wider text-white/25">Revenue Ops</span>
+                  </div>
+                </div>
+              </SurfaceCard>
+            </Reveal>
+
+            {/* Voicebot UI */}
+            <Reveal delay={0.16}>
+              <SurfaceCard className="overflow-hidden rounded-[28px] p-0">
+                <div className="bg-[linear-gradient(180deg,rgba(20,32,58,0.96),rgba(7,12,24,0.96))] p-5 text-white">
+                  <WindowChrome label="Morpheus · Voicebot" />
+                  <div className="mb-4 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-white/45">Calls intercepted / day</span>
+                      <span className="text-sm font-semibold">247</span>
                     </div>
                     <div>
-                      <div className="font-display text-3xl text-black">40%</div>
-                      <div className="text-gray-600">{t('revenueBoost')}</div>
+                      <div className="mb-1.5 flex items-center justify-between">
+                        <span className="text-[10px] text-white/30">Auto-qualification rate</span>
+                        <span className="text-[10px] text-white/50">87%</span>
+                      </div>
+                      <div className="h-1 w-full rounded-full bg-white/[0.08]">
+                        <motion.div
+                          className="h-1 rounded-full bg-white"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: "87%" }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1.2, delay: 0.3 }}
+                        />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2.5">
+                      <div className="rounded-lg border border-white/[0.06] bg-white/[0.04] p-3 text-center">
+                        <div className="text-xl font-semibold text-[var(--brand-lime)]">&lt;2s</div>
+                        <div className="mt-0.5 text-[10px] text-white/30">Response</div>
+                      </div>
+                      <div className="rounded-lg border border-white/[0.06] bg-white/[0.04] p-3 text-center">
+                        <div className="text-xl font-semibold text-[var(--brand-lime)]">24/7</div>
+                        <div className="mt-0.5 text-[10px] text-white/30">Uptime</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                
-                <p className="text-lg text-gray-600">
-                  {t('nowIHelp')} <strong>{t('entrepreneurToEntrepreneurText')}</strong> {t('solvingProblemsLived')}
-                </p>
-              </div>
-              
-              <div className="relative">
-                {/* TODO: Replace with real photo of Thierry — add /public/thierry.jpg */}
-                <div className="bg-gradient-to-br from-[#0D1F3C] to-[#0B132B] rounded-2xl aspect-square flex items-center justify-center overflow-hidden border border-[#1E293B]">
-                  <div className="flex flex-col items-center justify-center text-center p-8">
-                    <div className="w-24 h-24 bg-[#1E293B] rounded-full flex items-center justify-center mb-4">
-                      <i className="fas fa-user text-[#FACC15] text-4xl"></i>
+                  <div className="flex items-center justify-between border-t border-white/10 pt-3">
+                    <div className="flex items-center gap-1.5">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--brand-lime)]" />
+                      <span className="text-[10px] text-[var(--brand-lime)]">Zero missed calls</span>
                     </div>
-                    <span className="text-gray-400 text-sm">Photo — Thierry Bijou</span>
+                    <span className="text-[10px] font-medium uppercase tracking-wider text-white/25">Morpheus</span>
                   </div>
                 </div>
-                
-                <div className="absolute -bottom-4 left-4 bg-white p-4 rounded-lg shadow-lg border">
-                  <div className="text-center">
-                    <div className="font-display text-xl">2024</div>
-                    <div className="text-sm text-gray-600">{t('foundedBadge')}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </SurfaceCard>
+            </Reveal>
           </div>
-        </div>
+        </MarketingContainer>
       </section>
-      {/* CTA Section */}
-      <section className="py-24 bg-black text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="font-display text-4xl lg:text-5xl mb-6">
-                  {t('readyToCutWorkload')}
-                </h2>
-                <p className="text-xl text-gray-300 mb-8">
-                  {t('freeConsultationText')}
-                </p>
-                
-                <div className="space-y-6">
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-white text-black rounded-lg flex items-center justify-center mr-4">
-                      <i className="fas fa-check text-sm"></i>
+
+      {/* ═══ MODULES ══════════════════════════════════════ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer className="space-y-10">
+          <SectionHeader eyebrow={t("eyebrowModularSystem")} title={t("ourModules")} description={t("standardizedModulesDescription")} align="center" />
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {modules.map((module, index) => {
+              const Icon = module.icon;
+              return (
+                <Reveal key={module.name} delay={index * 0.06}>
+                  <SurfaceCard className="h-full rounded-[30px] p-6">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-[18px] bg-slate-950 text-white"><Icon className="h-5 w-5" /></div>
+                      <div className="rounded-full bg-[var(--brand-lime)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-slate-950">{module.label}</div>
                     </div>
-                    <span className="text-gray-300">{t('identifyTimeWasters')}</span>
-                  </div>
-                  
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-white text-black rounded-lg flex items-center justify-center mr-4">
-                      <i className="fas fa-check text-sm"></i>
+                    <h3 className="mt-6 font-display text-3xl tracking-[-0.04em] text-slate-950">{module.name}</h3>
+                    <p className="mt-4 text-sm leading-7 text-slate-600">{module.description}</p>
+                    <div className="mt-8 flex items-center justify-between border-t border-[rgba(16,24,40,0.08)] pt-5 text-sm font-semibold text-slate-500">
+                      <span>{t("alwaysConnected")}</span>
+                      <span className="text-slate-950">{t("readyToDeploy")}</span>
                     </div>
-                    <span className="text-gray-300">{t('getCustomRoadmap')}</span>
+                  </SurfaceCard>
+                </Reveal>
+              );
+            })}
+          </div>
+        </MarketingContainer>
+      </section>
+
+      {/* ═══ TECH STACK ═══════════════════════════════════ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer className="space-y-10">
+          <SectionHeader eyebrow={t("eyebrowStackDesign")} title={t("ourTechStack")} description={t("techStackDescription")} align="center" />
+
+          {/* Stats bar */}
+          <Reveal>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {[
+                { value: t("techStackStat1Value"), label: t("techStackStat1Label") },
+                { value: t("techStackStat2Value"), label: t("techStackStat2Label") },
+                { value: t("techStackStat3Value"), label: t("techStackStat3Label") },
+                { value: t("techStackStat4Value"), label: t("techStackStat4Label") },
+              ].map((stat) => (
+                <SurfaceCard key={stat.label} className="rounded-[22px] p-5 text-center">
+                  <div className="font-display text-3xl tracking-[-0.05em] text-slate-950">{stat.value}</div>
+                  <div className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">{stat.label}</div>
+                </SurfaceCard>
+              ))}
+            </div>
+          </Reveal>
+
+          {/* Stack layers */}
+          <div className="space-y-6">
+            {stackLayers.map((layer, layerIndex) => (
+              <Reveal key={layer.layer} delay={layerIndex * 0.06}>
+                <SurfaceCard className="rounded-[30px] p-6">
+                  <div className="mb-5 inline-flex rounded-full bg-slate-950 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-white">
+                    {layer.layer}
                   </div>
-                  
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-white text-black rounded-lg flex items-center justify-center mr-4">
-                      <i className="fas fa-check text-sm"></i>
-                    </div>
-                    <span className="text-gray-300">{t('noCommitmentRequired')}</span>
+                  <div className={`grid gap-4 ${layer.tools.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
+                    {layer.tools.map((tool) => {
+                      const Icon = tool.icon;
+                      return (
+                        <div key={tool.name} className="marketing-subpanel p-5">
+                          <div className="flex items-center gap-3">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-[14px] bg-white text-slate-950 shadow-[0_12px_24px_rgba(15,23,42,0.06)]">
+                              <Icon className="h-4 w-4" />
+                            </div>
+                            <h4 className="font-display text-xl tracking-[-0.03em] text-slate-950">{tool.name}</h4>
+                          </div>
+                          <p className="mt-3 text-sm leading-6 text-slate-600">{tool.description}</p>
+                          <p className="mt-2 text-xs font-semibold text-slate-900">{tool.benefit}</p>
+                        </div>
+                      );
+                    })}
                   </div>
+                </SurfaceCard>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Philosophy banner */}
+          <Reveal delay={0.1}>
+            <SurfaceCard className="rounded-[30px] bg-[linear-gradient(135deg,#111b2d,#1f365b)] p-8 text-white">
+              <div className="grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+                <div>
+                  <h3 className="font-display text-3xl tracking-[-0.04em]">{t("techStackWhyTitle")}</h3>
+                  <p className="mt-4 text-sm leading-7 text-white/70">{t("techStackWhyDescription")}</p>
+                </div>
+                <div className="rounded-[22px] border border-white/10 bg-white/8 p-5">
+                  <p className="text-base leading-8 text-white/80 italic">&ldquo;{t("techStackPhilosophy")}&rdquo;</p>
+                  <div className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">— Minecore · OpenClaw</div>
                 </div>
               </div>
-              
-              <div className="bg-white rounded-2xl p-8 text-[#000000]">
+            </SurfaceCard>
+          </Reveal>
+        </MarketingContainer>
+      </section>
+
+      {/* ═══ CTA ══════════════════════════════════════════ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer>
+          <SurfaceCard className="rounded-[36px] p-4 sm:p-5">
+            <div className="grid gap-8 rounded-[30px] bg-[linear-gradient(135deg,#111b2d,#1f365b)] p-6 text-white sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-12">
+              <div className="space-y-6">
+                <div className="marketing-chip border-white/12 bg-white/8 text-white/72">{t("eyebrowRoadmapSession")}</div>
+                <h2 className="font-display text-4xl leading-[0.96] tracking-[-0.05em] sm:text-5xl">{t("readyToCutWorkload")}</h2>
+                <p className="max-w-xl text-lg leading-8 text-white/74">{t("freeConsultationText")}</p>
+                <div className="grid gap-3">
+                  {[t("identifyTimeWasters"), t("getCustomRoadmap"), t("noCommitmentRequired")].map((item) => (
+                    <div key={item} className="flex items-center gap-3 rounded-[22px] border border-white/10 bg-white/7 px-4 py-3 text-sm text-white/82">
+                      <BarChart3 className="h-4 w-4 text-[var(--brand-lime)]" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-[28px] border border-white/12 bg-[#fffaf3] p-2 text-slate-950 shadow-[0_32px_70px_rgba(0,0,0,0.18)]">
                 <MultiStepConsultationForm />
               </div>
             </div>
-          </div>
-        </div>
+          </SurfaceCard>
+        </MarketingContainer>
       </section>
     </div>
   );

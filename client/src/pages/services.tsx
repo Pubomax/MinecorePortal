@@ -1,275 +1,234 @@
-import { useLanguage } from "@/hooks/use-language";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ConsultationModal } from "@/components/consultation-modal";
 import { Link } from "wouter";
+import {
+  BrainCircuit,
+  Cable,
+  Cloud,
+  Container,
+  Database,
+  MessageSquareText,
+  Phone,
+  Sparkles,
+  Users,
+  Workflow,
+} from "lucide-react";
+import { ConsultationModal } from "@/components/consultation-modal";
+import { useLanguage } from "@/hooks/use-language";
+import {
+  CivicViewProductCard,
+  ExecProductCard,
+  MarketingContainer,
+  MarketingHero,
+  OperatorProductCard,
+  Reveal,
+  SectionHeader,
+  SuitePreview,
+  SurfaceCard,
+} from "@/components/marketing";
 
 export default function Services() {
   const { t } = useLanguage();
 
+  const stackLayers = [
+    {
+      layer: t("techStackLayerOrchestration"),
+      tools: [
+        { name: "n8n", icon: Workflow, description: t("n8nDescription"), benefit: t("n8nBenefit") },
+        { name: "Make", icon: Cable, description: t("makeDescription"), benefit: t("makeBenefit") },
+      ],
+    },
+    {
+      layer: t("techStackLayerIntelligence"),
+      tools: [
+        { name: "OpenAI", icon: Sparkles, description: t("openAiDescription"), benefit: t("openAiBenefit") },
+        { name: "Kommo CRM", icon: Users, description: t("komomCrmDescription"), benefit: t("komomBenefit") },
+      ],
+    },
+    {
+      layer: t("techStackLayerCommunication"),
+      tools: [
+        { name: "Twilio", icon: Phone, description: t("twilioDescription"), benefit: t("twilioBenefit") },
+        { name: "WhatsApp API", icon: MessageSquareText, description: t("whatsappApiDescription"), benefit: t("whatsappApiBenefit") },
+      ],
+    },
+    {
+      layer: t("techStackLayerInfrastructure"),
+      tools: [
+        { name: "PostgreSQL", icon: Database, description: t("postgresDescription"), benefit: t("postgresBenefit") },
+        { name: "Docker", icon: Container, description: t("dockerDescription"), benefit: t("dockerBenefit") },
+        { name: "Vercel", icon: Cloud, description: t("vercelDescription"), benefit: t("vercelBenefit") },
+      ],
+    },
+  ];
+
+  const steps = [
+    { number: "01", title: t("step1Title"), description: t("step1Description") },
+    { number: "02", title: t("step2Title"), description: t("step2Description") },
+    { number: "03", title: t("step3Title"), description: t("step3Description") },
+  ];
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-black text-white py-24 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-display text-5xl lg:text-6xl leading-tight mb-8">
-              {t('servicesModularTitle')}<br />
-              <span className="text-gray-300">{t('servicesModularSubtitle')}</span>
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
-              {t('servicesModularDescription')}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <ConsultationModal 
-                triggerText={t('bookFreeConsultation')}
-                size="lg" 
-                className="bg-white text-black hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-                data-testid="button-book-consultation-services"
-              />
-              <Link href="/pricing">
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg font-semibold"
-                  data-testid="button-view-pricing-services"
-                >
-                  {t('viewPricingPlans')}
-                </Button>
-              </Link>
-            </div>
+    <div className="pb-12">
+      {/* ═══ HERO ═══════════════════════════════════════════ */}
+      <MarketingHero
+        eyebrow={t("eyebrowAiProductsSystems")}
+        title={
+          <>
+            {t("aiProductsHeroTitle")}
+            <br />
+            <span className="text-slate-500">{t("aiProductsHeroSubtitle")}</span>
+          </>
+        }
+        description={t("aiProductsHeroDescription")}
+        primaryAction={
+          <ConsultationModal
+            triggerText={t("bookFreeConsultation")}
+            className="marketing-button-primary h-12 px-6 text-sm font-semibold"
+          />
+        }
+        secondaryAction={
+          <Link
+            href="/pricing"
+            className="marketing-button-secondary inline-flex h-12 items-center justify-center px-6 text-sm font-semibold"
+          >
+            {t("viewPricingPlans")}
+          </Link>
+        }
+        stats={[
+          { label: t("servicesStatProducts"), value: "03" },
+          { label: t("servicesStatDeployment"), value: "2-3 " + t("weeksSuffix") },
+          { label: t("servicesStatSupport"), value: t("servicesStatSupportValue") },
+        ]}
+        aside={
+          <SuitePreview
+            accentLabel={t("servicesSuiteAccent")}
+            status={t("servicesSuiteStatus")}
+            title={t("servicesSuiteTitle")}
+            items={[
+              { label: t("servicesSuiteItem1Label"), value: "Exec" },
+              { label: t("servicesSuiteItem2Label"), value: "Operator" },
+              { label: t("servicesSuiteItem3Label"), value: "CivicView" },
+            ]}
+          />
+        }
+      />
+
+      {/* ═══ AI PRODUCTS ═══════════════════════════════════ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer className="space-y-10">
+          <SectionHeader
+            eyebrow={t("eyebrowAiProducts")}
+            title={t("aiProductsSectionTitle")}
+            description={t("aiProductsSectionDescription")}
+            align="center"
+          />
+          <OperatorProductCard showGuarantee />
+          <div className="grid gap-6 md:grid-cols-2">
+            <ExecProductCard />
+            <CivicViewProductCard />
           </div>
-        </div>
+        </MarketingContainer>
       </section>
 
-      {/* Core Modules Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-4xl lg:text-5xl mb-6">{t('ourCoreModules')}</h2>
-              <p className="text-xl text-gray-600">{t('productizedSolutionsDescription')}</p>
+      {/* ═══ TECH STACK ═══════════════════════════════════ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer className="space-y-10">
+          <SectionHeader eyebrow={t("eyebrowTechStack")} title={t("ourTechStack")} description={t("techStackDescription")} align="center" />
+
+          <Reveal>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {[
+                { value: t("techStackStat1Value"), label: t("techStackStat1Label") },
+                { value: t("techStackStat2Value"), label: t("techStackStat2Label") },
+                { value: t("techStackStat3Value"), label: t("techStackStat3Label") },
+                { value: t("techStackStat4Value"), label: t("techStackStat4Label") },
+              ].map((stat) => (
+                <SurfaceCard key={stat.label} className="rounded-[22px] p-5 text-center">
+                  <div className="font-display text-3xl tracking-[-0.05em] text-slate-950">{stat.value}</div>
+                  <div className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">{stat.label}</div>
+                </SurfaceCard>
+              ))}
             </div>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Module 1: Chatbot */}
-              <Card className="border-2 border-gray-200 hover:border-black transition-colors" data-testid="card-service-chatbot">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                    <i className="fas fa-comments text-blue-600 text-2xl"></i>
-                  </div>
-                  <h3 className="font-display text-2xl mb-4">{t('chatbotModule')}</h3>
-                  <p className="text-gray-600 mb-6">{t('chatbotDetailedDescription')}</p>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start">
-                      <i className="fas fa-check text-black mr-2 mt-1"></i>
-                      <span>{t('chatbotFeature1')}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check text-black mr-2 mt-1"></i>
-                      <span>{t('chatbotFeature2')}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check text-black mr-2 mt-1"></i>
-                      <span>{t('chatbotFeature3')}</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+          </Reveal>
 
-              {/* Module 2: Voicebot */}
-              <Card className="border-2 border-gray-200 hover:border-black transition-colors" data-testid="card-service-voicebot">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                    <i className="fas fa-phone text-green-600 text-2xl"></i>
+          <div className="space-y-6">
+            {stackLayers.map((layer, layerIndex) => (
+              <Reveal key={layer.layer} delay={layerIndex * 0.06}>
+                <SurfaceCard className="rounded-[30px] p-6">
+                  <div className="mb-5 inline-flex rounded-full bg-slate-950 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-white">
+                    {layer.layer}
                   </div>
-                  <h3 className="font-display text-2xl mb-4">{t('voicebotModule')}</h3>
-                  <p className="text-gray-600 mb-6">{t('voicebotDetailedDescription')}</p>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start">
-                      <i className="fas fa-check text-black mr-2 mt-1"></i>
-                      <span>{t('voicebotFeature1')}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check text-black mr-2 mt-1"></i>
-                      <span>{t('voicebotFeature2')}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check text-black mr-2 mt-1"></i>
-                      <span>{t('voicebotFeature3')}</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Module 3: CRM Kommo */}
-              <Card className="border-2 border-gray-200 hover:border-black transition-colors" data-testid="card-service-crm">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                    <i className="fas fa-users text-purple-600 text-2xl"></i>
+                  <div className={`grid gap-4 ${layer.tools.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
+                    {layer.tools.map((tool) => {
+                      const Icon = tool.icon;
+                      return (
+                        <div key={tool.name} className="marketing-subpanel p-5">
+                          <div className="flex items-center gap-3">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-[14px] bg-white text-slate-950 shadow-[0_12px_24px_rgba(15,23,42,0.06)]">
+                              <Icon className="h-4 w-4" />
+                            </div>
+                            <h4 className="font-display text-xl tracking-[-0.03em] text-slate-950">{tool.name}</h4>
+                          </div>
+                          <p className="mt-3 text-sm leading-6 text-slate-600">{tool.description}</p>
+                          <p className="mt-2 text-xs font-semibold text-slate-900">{tool.benefit}</p>
+                        </div>
+                      );
+                    })}
                   </div>
-                  <h3 className="font-display text-2xl mb-4">{t('crmModule')}</h3>
-                  <p className="text-gray-600 mb-6">{t('crmDetailedDescription')}</p>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start">
-                      <i className="fas fa-check text-black mr-2 mt-1"></i>
-                      <span>{t('crmFeature1')}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check text-black mr-2 mt-1"></i>
-                      <span>{t('crmFeature2')}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check text-black mr-2 mt-1"></i>
-                      <span>{t('crmFeature3')}</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Module 4: Custom Automations */}
-              <Card className="border-2 border-gray-200 hover:border-black transition-colors" data-testid="card-service-automations">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
-                    <i className="fas fa-cogs text-orange-600 text-2xl"></i>
-                  </div>
-                  <h3 className="font-display text-2xl mb-4">{t('automationsModule')}</h3>
-                  <p className="text-gray-600 mb-6">{t('automationsDetailedDescription')}</p>
-                  <ul className="space-y-2 text-gray-600">
-                    <li className="flex items-start">
-                      <i className="fas fa-check text-black mr-2 mt-1"></i>
-                      <span>{t('automationsFeature1')}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check text-black mr-2 mt-1"></i>
-                      <span>{t('automationsFeature2')}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <i className="fas fa-check text-black mr-2 mt-1"></i>
-                      <span>{t('automationsFeature3')}</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
+                </SurfaceCard>
+              </Reveal>
+            ))}
           </div>
-        </div>
-      </section>
 
-      {/* Technology Stack Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-4xl lg:text-5xl mb-6">{t('ourTechStack')}</h2>
-              <p className="text-xl text-gray-600">{t('techStackDescription')}</p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Tech 1: n8n */}
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-black rounded-xl flex items-center justify-center mb-6 mx-auto">
-                    <i className="fas fa-project-diagram text-white text-3xl"></i>
-                  </div>
-                  <h3 className="font-display text-2xl mb-4">n8n</h3>
-                  <p className="text-gray-600 mb-4">{t('n8nDescription')}</p>
-                  <p className="text-sm text-gray-500">{t('n8nBenefit')}</p>
-                </CardContent>
-              </Card>
-
-              {/* Tech 2: Kommo CRM */}
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-blue-600 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                    <i className="fas fa-database text-white text-3xl"></i>
-                  </div>
-                  <h3 className="font-display text-2xl mb-4">Kommo CRM</h3>
-                  <p className="text-gray-600 mb-4">{t('komomCrmDescription')}</p>
-                  <p className="text-sm text-gray-500">{t('komomBenefit')}</p>
-                </CardContent>
-              </Card>
-
-              {/* Tech 3: OpenAI */}
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-green-600 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                    <i className="fas fa-brain text-white text-3xl"></i>
-                  </div>
-                  <h3 className="font-display text-2xl mb-4">OpenAI</h3>
-                  <p className="text-gray-600 mb-4">{t('openAiDescription')}</p>
-                  <p className="text-sm text-gray-500">{t('openAiBenefit')}</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Implementation Process Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-display text-4xl lg:text-5xl mb-6">{t('howWeWork')}</h2>
-              <p className="text-xl text-gray-600">{t('simpleProcessDescription')}</p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Step 1 */}
-              <div className="text-center">
-                <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                  1
+          <Reveal delay={0.1}>
+            <SurfaceCard className="rounded-[30px] bg-[linear-gradient(135deg,#111b2d,#1f365b)] p-8 text-white">
+              <div className="grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+                <div>
+                  <h3 className="font-display text-3xl tracking-[-0.04em]">{t("techStackWhyTitle")}</h3>
+                  <p className="mt-4 text-sm leading-7 text-white/70">{t("techStackWhyDescription")}</p>
                 </div>
-                <h3 className="font-display text-2xl mb-4">{t('step1Title')}</h3>
-                <p className="text-gray-600">{t('step1Description')}</p>
+                <div className="rounded-[22px] border border-white/10 bg-white/8 p-5">
+                  <p className="text-base leading-8 text-white/80 italic">&ldquo;{t("techStackPhilosophy")}&rdquo;</p>
+                  <div className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">— Minecore · OpenClaw</div>
+                </div>
               </div>
+            </SurfaceCard>
+          </Reveal>
+        </MarketingContainer>
+      </section>
 
-              {/* Step 2 */}
-              <div className="text-center">
-                <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                  2
-                </div>
-                <h3 className="font-display text-2xl mb-4">{t('step2Title')}</h3>
-                <p className="text-gray-600">{t('step2Description')}</p>
-              </div>
+      {/* ═══ HOW WE WORK ══════════════════════════════════ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer className="space-y-10">
+          <SectionHeader eyebrow={t("eyebrowImplementation")} title={t("howWeWork")} description={t("simpleProcessDescription")} align="center" />
+          <div className="grid gap-6 md:grid-cols-3">
+            {steps.map((step, index) => (
+              <Reveal key={step.title} delay={index * 0.08}>
+                <SurfaceCard className="h-full rounded-[30px] p-6">
+                  <div className="inline-flex rounded-full bg-[var(--brand-lime)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-slate-950">{step.number}</div>
+                  <h3 className="mt-5 font-display text-3xl tracking-[-0.04em] text-slate-950">{step.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-600">{step.description}</p>
+                </SurfaceCard>
+              </Reveal>
+            ))}
+          </div>
+        </MarketingContainer>
+      </section>
 
-              {/* Step 3 */}
-              <div className="text-center">
-                <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                  3
-                </div>
-                <h3 className="font-display text-2xl mb-4">{t('step3Title')}</h3>
-                <p className="text-gray-600">{t('step3Description')}</p>
+      {/* ═══ CTA ══════════════════════════════════════════ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer>
+          <SurfaceCard className="rounded-[34px] p-8 text-center">
+            <div className="mx-auto max-w-3xl">
+              <div className="marketing-chip">{t("eyebrowServiceFit")}</div>
+              <h2 className="mt-6 font-display text-4xl tracking-[-0.05em] text-slate-950 sm:text-5xl">{t("readyToEliminateBottlenecks")}</h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">{t("readyToEliminateBottlenecksDesc")}</p>
+              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <ConsultationModal triggerText={t("bookFreeConsultation")} className="marketing-button-primary h-12 px-6 text-sm font-semibold" />
+                <Link href="/pricing" className="marketing-button-secondary inline-flex h-12 items-center justify-center px-6 text-sm font-semibold">{t("pricing")}</Link>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 bg-black text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-display text-4xl lg:text-5xl mb-6">
-              {t('readyToEliminateBottlenecks')}
-            </h2>
-            <p className="text-xl text-gray-300 mb-12">
-              {t('readyToEliminateBottlenecksDesc')}
-            </p>
-            
-            <Link href="/contact">
-              <Button 
-                size="lg" 
-                className="bg-white text-black hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-              >
-                {t('bookFreeConsultation')}
-              </Button>
-            </Link>
-          </div>
-        </div>
+          </SurfaceCard>
+        </MarketingContainer>
       </section>
     </div>
   );
