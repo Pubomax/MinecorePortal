@@ -23,31 +23,7 @@ export default function GoogleAdsLanding() {
         </div>
       </div>
 
-      {/* Google Ads Tracking Script */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            // Track page view for Google Ads
-            if (typeof gtag !== 'undefined') {
-              gtag('config', 'G-2S9WTCBXWT', {
-                custom_map: { 'custom_parameter_1': 'google_ads_form' }
-              });
-              
-              gtag('event', 'page_view', {
-                'page_title': 'Google Ads Landing - Consultation Form',
-                'page_location': window.location.href,
-                'content_group1': 'google_ads_landing'
-              });
-              
-              // Track landing page visit for Google Ads
-              gtag('event', 'view_item', {
-                'item_category': 'landing_page',
-                'item_name': 'consultation_gratuite'
-              });
-            }
-          `
-        }}
-      />
+      {/* GA4 is now loaded globally in index.html */}
     </div>
   );
 }
