@@ -18,7 +18,7 @@ export const translations: Translations = {
     // Hero Section
     heroTitle: "Time Is Priceless.",
     heroTitleHighlight: "We Give You More.",
-    heroSubtitle: "Every executive — every size, every level, every background — lacks one thing: time. AI automation that gives you the 48-hour day you've always needed.",
+    heroSubtitle: "Every executive, no matter the size, level or background, lacks one thing: time. AI automation that gives you the 48-hour day you've always needed.",
     workloadReduced: "Workload Reduced",
     revenueIncrease: "Revenue Increase",
     weeksGoLive: "Weeks Go-Live",
@@ -75,7 +75,7 @@ export const translations: Translations = {
     eyebrowUseCases: "use cases",
     useCasesTitle: "What We Build",
     useCasesSubtitle: "And Who It's For",
-    useCasesDescription: "Real scenarios we're equipped to solve. No fake case studies — just the systems we deploy and the problems they address.",
+    useCasesDescription: "Real scenarios we're equipped to solve. No fake case studies. Just the systems we deploy and the problems they address.",
     eyebrowScenarios: "common scenarios",
     scenariosSectionTitle: "Three Problems We Solve Every Week",
     scenariosSectionDesc: "Each scenario maps to a repeatable system we've built and refined.",
@@ -89,7 +89,7 @@ export const translations: Translations = {
     earlyStageDisclaimer: "Minecore launched in 2024. We're transparent about where we are: early-stage, founder-led, building trust one deployment at a time. References available on request.",
     eyebrowNextStep: "next step",
     useCasesCtaTitle: "Have a similar bottleneck?",
-    useCasesCtaDesc: "We'll map the constraint, scope the system, and give you a clear plan — no commitment required.",
+    useCasesCtaDesc: "We'll map the constraint, scope the system, and give you a clear plan. No commitment required.",
 
     scenarioLogisticsTitle: "Freight & Logistics",
     scenarioLogisticsIndustry: "transportation · dispatch · tracking",
@@ -422,7 +422,7 @@ export const translations: Translations = {
     speed: "Speed",
     speedDescription: "Time is your most valuable asset. We deliver results in weeks, not months.",
     partnership: "Partnership",
-    partnershipDescription: "We're not vendors—we're fellow entrepreneurs invested in your success.",
+    partnershipDescription: "We're not vendors. We're fellow entrepreneurs invested in your success.",
     resultsDescription: "Everything we do is measured by one metric: your ROI.",
     readyForBreakthrough: "Ready for Your Own Breakthrough?",
     entrepreneurToEntrepreneurTalk: "Let's talk entrepreneur-to-entrepreneur about transforming your business. No sales pressure, just real solutions.",
@@ -467,7 +467,7 @@ export const translations: Translations = {
     // About page
     aboutTitle: "We Sell Time",
     aboutSubtitle: "To Executives.",
-    aboutDescription: "You'd give the world for a 48-hour day. That's what we promise, and that's what we deliver. AI automation that multiplies your productivity and efficiency — personally and across your entire business.",
+    aboutDescription: "You'd give the world for a 48-hour day. That's what we promise, and that's what we deliver. AI automation that multiplies your productivity and efficiency, personally and across your entire business.",
     aboutCompanyTitle: "About Minecore Group",
     aboutCompanySubtitle: "Founded in 2024 by an executive who refused to accept that time was the one thing money couldn't buy.",
     workWithUs: "Work With Us",
@@ -566,7 +566,7 @@ export const translations: Translations = {
     endlessEmailThreads: "• Endless email threads with the same questions",
     phoneConstantlyRinging: "• Phone constantly ringing during strategic work",
     customerFrustration: "• Customer frustration when you're not available",
-    cantScaleBottleneck: "• Can't scale—you're the bottleneck",
+    cantScaleBottleneck: "• Can't scale because you're the bottleneck",
     ourAiSupportSolution: "Our AI Support Solution",
     intelligentChatbots: "Intelligent Chatbots",
     intelligentChatbotsDesc: "Handle 80% of customer questions 24/7",
@@ -807,7 +807,7 @@ export const translations: Translations = {
     whatsappApiBenefit: "2B+ users reachable through official API",
     makeBenefit: "500+ app connectors for any integration need",
     postgresBenefit: "Battle-tested reliability for mission-critical data",
-    dockerBenefit: "Ship once, run anywhere — reproducible infrastructure",
+    dockerBenefit: "Ship once, run anywhere. Reproducible infrastructure",
     vercelBenefit: "Global edge network with zero-config deployments",
 
     // Implementation Process
@@ -824,7 +824,7 @@ export const translations: Translations = {
     openclawBadge: "Powered by OpenClaw · AI Operating Layer",
     openclawHeroTitle1: "Build smarter operations.",
     openclawHeroTitle2: "Scale without the overhead.",
-    openclawHeroSubtitle: "Minecore deploys AI systems that handle support, sales, and operations—so founders can focus on growth.",
+    openclawHeroSubtitle: "Minecore deploys AI systems that handle support, sales, and operations so founders can focus on growth.",
     openclawPrimaryCta: "Book a free consultation",
     openclawSecondaryCta: "Explore our services",
     openclawTrust1: "n8n · Kommo · OpenAI",
@@ -848,7 +848,7 @@ export const translations: Translations = {
 
     // Platform
     platformInAction: "Platform in Action",
-    platformInActionSubtitle: "OpenClaw, Clawbot, BotClaw, Morpheus — real interfaces deployed for growth teams in Montreal.",
+    platformInActionSubtitle: "OpenClaw, Clawbot, BotClaw, Morpheus. Real interfaces deployed for growth teams in Montreal.",
 
     // AI Products
     aiProductsHeroTitle: "AI Products & Systems",
@@ -862,7 +862,7 @@ export const translations: Translations = {
     productOperatorBadge: "Available Now",
     productOperatorName: "Minecore Operator",
     productOperatorTagline: "AI Operations System for businesses",
-    productOperatorDescription: "A managed, multi-channel revenue recovery system. Capture every missed call, qualify every lead, and close more deals—without adding headcount.",
+    productOperatorDescription: "A managed, multi-channel revenue recovery system. Capture every missed call, qualify every lead, and close more deals without adding headcount.",
     productOperatorFeature1: "Missed call capture + WhatsApp follow-up within 60 seconds",
     productOperatorFeature2: "CRM setup + lead scoring (Kommo)",
     productOperatorFeature3: "AI knowledge base (RAG) for 24/7 customer support",
@@ -899,7 +899,7 @@ export const translations: Translations = {
     pricingUnifiedDescription: "Setup fee + monthly plan. No long-term contracts. Month-to-month flexibility. Cancel anytime.",
     pricingStatProducts: "products",
     pricingChooseTitle: "Choose Your Product",
-    pricingChooseDesc: "Each product is a complete, managed system — not a feature tier. Pick the one that matches your needs.",
+    pricingChooseDesc: "Each product is a complete, managed system, not a feature tier. Pick the one that matches your needs.",
     pricingFlagship: "flagship",
     pricingCustomName: "Custom",
     pricingCustomTagline: "tailored systems for complex needs",
@@ -936,7 +936,7 @@ export const translations: Translations = {
 
     // Dark banner
     darkBannerTitle: "Three levels of impact.",
-    darkBannerDescription: "From a personal AI chief of staff to a full institutional engagement platform — Minecore adapts to the complexity of your operations.",
+    darkBannerDescription: "From a personal AI chief of staff to a full institutional engagement platform. Minecore adapts to the complexity of your operations.",
 
     // Module labels
     alwaysConnected: "always connected",
@@ -996,7 +996,7 @@ export const translations: Translations = {
     pricingStep1Title: "Discovery Call",
     pricingStep1Desc: "Free 30-minute consultation to map your biggest bottlenecks and identify automation opportunities.",
     pricingStep2Title: "Custom Proposal",
-    pricingStep2Desc: "We scope the system, define deliverables, and present a clear quote — no surprises.",
+    pricingStep2Desc: "We scope the system, define deliverables, and present a clear quote. No surprises.",
     pricingStep3Title: "Build & Launch",
     pricingStep3Desc: "Implementation in 2-3 weeks with full training and ongoing support.",
     pricingModelLabel: "pricing model",
@@ -1085,18 +1085,18 @@ export const translations: Translations = {
     operatorLandingStatChannelsValue: "phone + WhatsApp + web",
     operatorLandingFeaturesEyebrow: "what's included",
     operatorLandingFeaturesTitle: "A Complete Revenue Recovery System",
-    operatorLandingFeaturesDesc: "Every missed call, every unqualified lead, every manual follow-up — handled automatically.",
+    operatorLandingFeaturesDesc: "Every missed call, every unqualified lead, every manual follow-up. Handled automatically.",
     operatorLandingFeature1Title: "Missed Call Capture",
     operatorLandingFeature1Desc: "Every missed call triggers an instant WhatsApp follow-up within 60 seconds. No lead falls through the cracks.",
     operatorLandingFeature2Title: "AI Chatbot (24/7)",
-    operatorLandingFeature2Desc: "AI knowledge base trained on your business answers customer questions around the clock — in English and French.",
+    operatorLandingFeature2Desc: "AI knowledge base trained on your business answers customer questions around the clock, in English and French.",
     operatorLandingFeature3Title: "CRM + Lead Scoring",
     operatorLandingFeature3Desc: "Full Kommo CRM setup with automated pipeline management, lead scoring, and smart assignment.",
     operatorLandingFeature4Title: "Daily Reporting",
     operatorLandingFeature4Desc: "Automated daily reports on leads, conversions, and pipeline health. Full visibility without manual work.",
     operatorLandingIncludedBadge: "everything included",
     operatorLandingIncludedTitle: "Fully Managed. No Headcount.",
-    operatorLandingMonthlyLabel: "monthly — fully managed",
+    operatorLandingMonthlyLabel: "monthly, fully managed",
     operatorLandingSetupLabel: "one-time setup",
     operatorLandingCtaTitle: "Stop Losing Leads Today",
     operatorLandingCtaDesc: "Book a free strategy call and we'll show you exactly how many leads you're leaving on the table.",
@@ -1117,7 +1117,7 @@ export const translations: Translations = {
     execLandingFeature4Desc: "Runs on your machine or our managed server. Your data stays yours.",
     execLandingWhoEyebrow: "who it's for",
     execLandingWhoTitle: "Built for the Person Running the Business",
-    execLandingWhoDesc: "Minecore Exec is designed for founders, CEOs, and operators who need clarity and leverage — not another tool to manage.",
+    execLandingWhoDesc: "Minecore Exec is designed for founders, CEOs, and operators who need clarity and leverage, not another tool to manage.",
     execLandingWho1: "Founders managing multiple priorities across teams",
     execLandingWho2: "CEOs who need instant access to business context",
     execLandingWho3: "Operators who want to think strategically, not administratively",
@@ -1141,7 +1141,7 @@ export const translations: Translations = {
     // Hero Section
     heroTitle: "Le temps n'a pas de prix.",
     heroTitleHighlight: "On vous en donne plus.",
-    heroSubtitle: "Chaque dirigeant — peu importe la taille, le niveau ou le parcours — manque d'une seule chose : le temps. L'automatisation IA qui vous donne la journée de 48 heures dont vous avez toujours eu besoin.",
+    heroSubtitle: "Chaque dirigeant, peu importe la taille, le niveau ou le parcours, manque d'une seule chose : le temps. L'automatisation IA qui vous donne la journée de 48 heures dont vous avez toujours eu besoin.",
     workloadReduced: "Charge de travail réduite",
     revenueIncrease: "Augmentation des revenus",
     weeksGoLive: "Semaines de mise en ligne",
@@ -1198,7 +1198,7 @@ export const translations: Translations = {
     eyebrowUseCases: "cas d'utilisation",
     useCasesTitle: "Ce que nous construisons",
     useCasesSubtitle: "Et pour qui",
-    useCasesDescription: "Des scénarios réels que nous sommes équipés pour résoudre. Pas de fausses études de cas — juste les systèmes que nous déployons et les problèmes qu'ils adressent.",
+    useCasesDescription: "Des scénarios réels que nous sommes équipés pour résoudre. Pas de fausses études de cas. Juste les systèmes que nous déployons et les problèmes qu'ils adressent.",
     eyebrowScenarios: "scénarios courants",
     scenariosSectionTitle: "Trois problèmes que nous résolvons chaque semaine",
     scenariosSectionDesc: "Chaque scénario correspond à un système reproductible que nous avons construit et affiné.",
@@ -1212,7 +1212,7 @@ export const translations: Translations = {
     earlyStageDisclaimer: "Minecore a été fondée en 2024. Nous sommes transparents sur notre stade : en démarrage, dirigée par le fondateur, construisant la confiance un déploiement à la fois. Références disponibles sur demande.",
     eyebrowNextStep: "prochaine étape",
     useCasesCtaTitle: "Vous avez un goulot d'étranglement similaire ?",
-    useCasesCtaDesc: "Nous analyserons la contrainte, définirons le système et vous donnerons un plan clair — sans engagement.",
+    useCasesCtaDesc: "Nous analyserons la contrainte, définirons le système et vous donnerons un plan clair. Sans engagement.",
 
     scenarioLogisticsTitle: "Fret & logistique",
     scenarioLogisticsIndustry: "transport · dispatch · suivi",
@@ -1545,7 +1545,7 @@ export const translations: Translations = {
     speed: "Vitesse",
     speedDescription: "Le temps est votre actif le plus précieux. Nous livrons des résultats en semaines, pas en mois.",
     partnership: "Partenariat",
-    partnershipDescription: "Nous ne sommes pas des vendeurs—nous sommes des entrepreneurs investis dans votre succès.",
+    partnershipDescription: "Nous ne sommes pas des vendeurs. Nous sommes des entrepreneurs investis dans votre succès.",
     resultsDescription: "Tout ce que nous faisons est mesuré par une métrique : votre ROI.",
     readyForBreakthrough: "Prêt pour votre propre percée ?",
     entrepreneurToEntrepreneurTalk: "Parlons entrepreneur à entrepreneur de la transformation de votre entreprise. Aucune pression de vente, juste des solutions réelles.",
@@ -1590,7 +1590,7 @@ export const translations: Translations = {
     // About page
     aboutTitle: "On vend du temps",
     aboutSubtitle: "aux dirigeants.",
-    aboutDescription: "Vous donneriez tout pour une journée de 48 heures. C'est ce qu'on promet, et c'est ce qu'on livre. L'automatisation IA qui multiplie votre productivité et votre efficacité — personnellement et à travers toute votre entreprise.",
+    aboutDescription: "Vous donneriez tout pour une journée de 48 heures. C'est ce qu'on promet, et c'est ce qu'on livre. L'automatisation IA qui multiplie votre productivité et votre efficacité, personnellement et à travers toute votre entreprise.",
     aboutCompanyTitle: "À propos de Minecore Group",
     aboutCompanySubtitle: "Fondé en 2024 par un dirigeant qui a refusé d'accepter que le temps soit la seule chose que l'argent ne pouvait pas acheter.",
     workWithUs: "Travaillez avec nous",
@@ -1657,7 +1657,7 @@ export const translations: Translations = {
     revenueBoost: "Augmentation des revenus",
     nowIHelp: "Maintenant j'aide les entrepreneurs de Montréal et d'ailleurs à réaliser la même percée.",
     entrepreneurToEntrepreneurText: "Entrepreneur-à-entrepreneur",
-    solvingProblemsLived: "— résoudre les problèmes que j'ai vécus.",
+    solvingProblemsLived: "Résoudre les problèmes que j'ai vécus.",
     foundedBadge: "Fondé",
 
     // CTA Section
@@ -1738,7 +1738,7 @@ export const translations: Translations = {
 
     // Integration Section
     integrateExistingTools: "Intégrez vos outils existants",
-    integrateExistingToolsDesc: "Nous ne remplaçons pas vos outils — nous les rendons plus intelligents. Nos solutions s'intègrent parfaitement avec votre pile technologique actuelle.",
+    integrateExistingToolsDesc: "Nous ne remplaçons pas vos outils. Nous les rendons plus intelligents. Nos solutions s'intègrent parfaitement avec votre pile technologique actuelle.",
 
     // ROI Section
     roiGuaranteeServicesTitle: "Garantie ROI 90 jours",
@@ -1797,7 +1797,7 @@ export const translations: Translations = {
     foundedIn2024: "Fondé en 2024 à Montréal, Minecore Group est né de la frustration. Notre fondateur était pris dans le même cycle que tous les entrepreneurs : travailler plus dur, pas plus intelligemment.",
     despiteGrowingRevenue: "Malgré une croissance des revenus, il travaillait 80+ heures par semaine, éteignant constamment les feux, et se sentait comme un prisonnier dans sa propre entreprise. Cela vous dit quelque chose ?",
     turningPoint: "Le point de bascule :",
-    turningPointQuote: "J'ai réalisé que je ne dirigeais pas une entreprise—l'entreprise me dirigeait. C'est alors que j'ai découvert que l'automatisation IA ne concernait pas seulement l'efficacité. Il s'agissait de liberté.",
+    turningPointQuote: "J'ai réalisé que je ne dirigeais pas une entreprise. L'entreprise me dirigeait. C'est alors que j'ai découvert que l'automatisation IA ne concernait pas seulement l'efficacité. Il s'agissait de liberté.",
     foundedMontreal: "Fondé 2024",
 
     // New Framework - Hero Section (French)
@@ -1952,7 +1952,7 @@ export const translations: Translations = {
     whatsappApiBenefit: "2 milliards+ d'utilisateurs via l'API officielle",
     makeBenefit: "500+ connecteurs d'applications pour toute intégration",
     postgresBenefit: "Fiabilité éprouvée pour données critiques",
-    dockerBenefit: "Déployez une fois, exécutez partout — infrastructure reproductible",
+    dockerBenefit: "Déployez une fois, exécutez partout. Infrastructure reproductible",
     vercelBenefit: "Réseau edge mondial avec déploiements zéro-config",
 
     // Implementation Process (French)
@@ -1969,7 +1969,7 @@ export const translations: Translations = {
     openclawBadge: "Propulsé par OpenClaw · Couche d'opérations IA",
     openclawHeroTitle1: "Construisez des opérations plus intelligentes.",
     openclawHeroTitle2: "Croissez sans les coûts.",
-    openclawHeroSubtitle: "Minecore déploie des systèmes IA qui gèrent le support, les ventes et les opérations—pour que les fondateurs se concentrent sur la croissance.",
+    openclawHeroSubtitle: "Minecore déploie des systèmes IA qui gèrent le support, les ventes et les opérations pour que les fondateurs se concentrent sur la croissance.",
     openclawPrimaryCta: "Réservez une consultation gratuite",
     openclawSecondaryCta: "Explorez nos services",
     openclawTrust1: "n8n · Kommo · OpenAI",
@@ -1993,7 +1993,7 @@ export const translations: Translations = {
 
     // Platform
     platformInAction: "Plateformes en action",
-    platformInActionSubtitle: "OpenClaw, Clawbot, BotClaw, Morpheus — des interfaces réelles déployées pour les équipes de croissance à Montréal.",
+    platformInActionSubtitle: "OpenClaw, Clawbot, BotClaw, Morpheus. Des interfaces réelles déployées pour les équipes de croissance à Montréal.",
 
     // AI Products
     aiProductsHeroTitle: "Produits & Systèmes IA",
@@ -2007,7 +2007,7 @@ export const translations: Translations = {
     productOperatorBadge: "Disponible maintenant",
     productOperatorName: "Minecore Operator",
     productOperatorTagline: "Système IA d'exploitation pour entreprises",
-    productOperatorDescription: "Système géré de récupération de revenus multi-canal. Capturez chaque appel manqué, qualifiez chaque prospect, concluez plus de ventes—sans ajouter d'effectifs.",
+    productOperatorDescription: "Système géré de récupération de revenus multi-canal. Capturez chaque appel manqué, qualifiez chaque prospect, concluez plus de ventes sans ajouter d'effectifs.",
     productOperatorFeature1: "Capture appel manqué + suivi WhatsApp en 60 secondes",
     productOperatorFeature2: "Configuration CRM + scoring des prospects (Kommo)",
     productOperatorFeature3: "Base de connaissances IA (RAG) pour support client 24/7",
@@ -2044,7 +2044,7 @@ export const translations: Translations = {
     pricingUnifiedDescription: "Frais d'installation + plan mensuel. Aucun contrat long terme. Flexibilité mois par mois. Annulez quand vous voulez.",
     pricingStatProducts: "produits",
     pricingChooseTitle: "Choisissez votre produit",
-    pricingChooseDesc: "Chaque produit est un système complet et géré — pas un niveau de fonctionnalités. Choisissez celui qui correspond à vos besoins.",
+    pricingChooseDesc: "Chaque produit est un système complet et géré, pas un niveau de fonctionnalités. Choisissez celui qui correspond à vos besoins.",
     pricingFlagship: "produit phare",
     pricingCustomName: "Sur mesure",
     pricingCustomTagline: "systèmes adaptés aux besoins complexes",
@@ -2081,7 +2081,7 @@ export const translations: Translations = {
 
     // Dark banner
     darkBannerTitle: "Trois niveaux d'impact.",
-    darkBannerDescription: "D'un chef de cabinet IA personnel à une plateforme d'engagement institutionnelle complète — Minecore s'adapte à la complexité de vos opérations.",
+    darkBannerDescription: "D'un chef de cabinet IA personnel à une plateforme d'engagement institutionnelle complète. Minecore s'adapte à la complexité de vos opérations.",
 
     // Module labels
     alwaysConnected: "toujours connecté",
@@ -2141,7 +2141,7 @@ export const translations: Translations = {
     pricingStep1Title: "Appel découverte",
     pricingStep1Desc: "Consultation gratuite de 30 minutes pour identifier vos plus gros goulots d'étranglement et opportunités d'automatisation.",
     pricingStep2Title: "Proposition sur mesure",
-    pricingStep2Desc: "Nous cadrons le système, définissons les livrables et présentons un devis clair — sans surprises.",
+    pricingStep2Desc: "Nous cadrons le système, définissons les livrables et présentons un devis clair. Sans surprises.",
     pricingStep3Title: "Construction et lancement",
     pricingStep3Desc: "Implémentation en 2-3 semaines avec formation complète et support continu.",
     pricingModelLabel: "modèle tarifaire",
@@ -2230,18 +2230,18 @@ export const translations: Translations = {
     operatorLandingStatChannelsValue: "téléphone + WhatsApp + web",
     operatorLandingFeaturesEyebrow: "ce qui est inclus",
     operatorLandingFeaturesTitle: "Un système complet de récupération de revenus",
-    operatorLandingFeaturesDesc: "Chaque appel manqué, chaque lead non qualifié, chaque suivi manuel — géré automatiquement.",
+    operatorLandingFeaturesDesc: "Chaque appel manqué, chaque lead non qualifié, chaque suivi manuel. Géré automatiquement.",
     operatorLandingFeature1Title: "Capture d'appels manqués",
     operatorLandingFeature1Desc: "Chaque appel manqué déclenche un suivi WhatsApp instantané en 60 secondes. Aucun lead ne passe entre les mailles du filet.",
     operatorLandingFeature2Title: "Chatbot IA (24/7)",
-    operatorLandingFeature2Desc: "Base de connaissances IA formée sur votre entreprise qui répond aux questions clients en continu — en français et anglais.",
+    operatorLandingFeature2Desc: "Base de connaissances IA formée sur votre entreprise qui répond aux questions clients en continu, en français et anglais.",
     operatorLandingFeature3Title: "CRM + scoring de leads",
     operatorLandingFeature3Desc: "Configuration complète Kommo CRM avec gestion automatisée du pipeline, scoring des leads et assignation intelligente.",
     operatorLandingFeature4Title: "Rapports quotidiens",
     operatorLandingFeature4Desc: "Rapports automatisés quotidiens sur les leads, conversions et santé du pipeline. Visibilité totale sans travail manuel.",
     operatorLandingIncludedBadge: "tout inclus",
     operatorLandingIncludedTitle: "Entièrement géré. Sans embauche.",
-    operatorLandingMonthlyLabel: "mensuel — entièrement géré",
+    operatorLandingMonthlyLabel: "mensuel, entièrement géré",
     operatorLandingSetupLabel: "installation unique",
     operatorLandingCtaTitle: "Arrêtez de perdre des leads dès aujourd'hui",
     operatorLandingCtaDesc: "Réservez un appel stratégique gratuit et nous vous montrerons exactement combien de leads vous laissez filer.",
@@ -2262,7 +2262,7 @@ export const translations: Translations = {
     execLandingFeature4Desc: "Fonctionne sur votre machine ou notre serveur géré. Vos données restent les vôtres.",
     execLandingWhoEyebrow: "pour qui",
     execLandingWhoTitle: "Conçu pour celui qui dirige l'entreprise",
-    execLandingWhoDesc: "Minecore Exec est conçu pour les fondateurs, PDG et opérateurs qui ont besoin de clarté et de levier — pas d'un autre outil à gérer.",
+    execLandingWhoDesc: "Minecore Exec est conçu pour les fondateurs, PDG et opérateurs qui ont besoin de clarté et de levier, pas d'un autre outil à gérer.",
     execLandingWho1: "Fondateurs gérant plusieurs priorités entre équipes",
     execLandingWho2: "PDG ayant besoin d'un accès instantané au contexte d'entreprise",
     execLandingWho3: "Opérateurs voulant penser stratégiquement, pas administrativement",
