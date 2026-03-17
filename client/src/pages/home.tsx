@@ -3,16 +3,24 @@ import {
   ArrowRight,
   BarChart3,
   Bot,
+  Brain,
   Cable,
+  Check,
   Cloud,
   Container,
   Database,
+  Headphones,
+  Megaphone,
   MessageSquareText,
   Phone,
   PhoneCall,
+  Settings,
   Sparkles,
+  Target,
+  TrendingUp,
   Users,
   Workflow,
+  X,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/use-language";
@@ -192,6 +200,182 @@ export default function Home() {
           </SurfaceCard>
         </Reveal>
       </MarketingContainer>
+
+      {/* ═══ CLEAR THE FOG ═════════════════════════════════ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer className="space-y-10">
+          <SectionHeader
+            eyebrow={t("fogEyebrow")}
+            title={<>{t("fogTitle")}<br /><span className="text-slate-500">{t("fogTitleHighlight")}</span></>}
+            description={t("fogDescription")}
+            align="center"
+          />
+
+          {/* Three Promises */}
+          <div className="grid gap-6 lg:grid-cols-3">
+            {[
+              { icon: TrendingUp, title: t("fogPromise1Title"), desc: t("fogPromise1Desc"), accent: "from-[#ddf7ff] to-[#c3ecff]" },
+              { icon: Target, title: t("fogPromise2Title"), desc: t("fogPromise2Desc"), accent: "from-[#eaf4d7] to-[#d5eea5]" },
+              { icon: Settings, title: t("fogPromise3Title"), desc: t("fogPromise3Desc"), accent: "from-[#fff1d8] to-[#ffe6b8]" },
+            ].map((promise, i) => {
+              const Icon = promise.icon;
+              return (
+                <Reveal key={promise.title} delay={i * 0.08}>
+                  <SurfaceCard className="h-full rounded-[30px] p-6">
+                    <div className={`inline-flex h-14 w-14 items-center justify-center rounded-[18px] bg-gradient-to-br ${promise.accent} text-slate-950 shadow-[0_18px_30px_rgba(15,23,42,0.08)]`}>
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="mt-6 font-display text-3xl tracking-[-0.04em] text-slate-950">{promise.title}</h3>
+                    <p className="mt-4 text-sm leading-7 text-slate-600">{promise.desc}</p>
+                  </SurfaceCard>
+                </Reveal>
+              );
+            })}
+          </div>
+
+          {/* Before / After Comparison */}
+          <Reveal delay={0.1}>
+            <div className="grid gap-6 md:grid-cols-2">
+              {/* Before */}
+              <SurfaceCard className="rounded-[30px] border-2 border-red-100 p-6">
+                <div className="mb-5 inline-flex rounded-full bg-red-50 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-red-600">
+                  {t("fogBeforeTitle")}
+                </div>
+                <div className="space-y-3">
+                  {[t("fogBeforeItem1"), t("fogBeforeItem2"), t("fogBeforeItem3"), t("fogBeforeItem4")].map((item) => (
+                    <div key={item} className="flex items-center gap-3 text-sm text-slate-600">
+                      <X className="h-4 w-4 flex-shrink-0 text-red-400" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </SurfaceCard>
+
+              {/* After */}
+              <SurfaceCard className="rounded-[30px] border-2 border-[var(--brand-lime)] p-6">
+                <div className="mb-5 inline-flex rounded-full bg-[var(--brand-lime)]/15 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-950">
+                  {t("fogAfterTitle")}
+                </div>
+                <div className="space-y-3">
+                  {[t("fogAfterItem1"), t("fogAfterItem2"), t("fogAfterItem3"), t("fogAfterItem4")].map((item) => (
+                    <div key={item} className="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                      <Check className="h-4 w-4 flex-shrink-0 text-[var(--brand-teal)]" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </SurfaceCard>
+            </div>
+          </Reveal>
+        </MarketingContainer>
+      </section>
+
+      {/* ═══ AGENT ORG CHART — Hub & Spoke Architecture ═══ */}
+      <section className="py-14 sm:py-20">
+        <MarketingContainer className="space-y-10">
+          <SectionHeader
+            eyebrow={t("agentOrgEyebrow")}
+            title={t("agentOrgTitle")}
+            description={t("agentOrgSubtitle")}
+            align="center"
+          />
+
+          {/* Architecture Diagram */}
+          <Reveal>
+            <SurfaceCard className="relative overflow-hidden rounded-[32px] bg-[linear-gradient(135deg,#0a1628,#14243f)] p-6 sm:p-10">
+              {/* Background grid pattern */}
+              <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+
+              {/* OpenClaw logo at top */}
+              <div className="relative mb-8 text-center">
+                <img src="/openclaw-logo.png" alt="OpenClaw" className="mx-auto h-10 sm:h-12" />
+                <p className="mt-2 text-xs uppercase tracking-[0.3em] text-white/30">AI Operating Layer</p>
+              </div>
+
+              {/* Hub & Spoke Layout */}
+              <div className="relative mx-auto max-w-4xl">
+                {/* SVG connection lines (visible on md+) */}
+                <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" preserveAspectRatio="none" viewBox="0 0 800 420">
+                  {/* Lines from center hub to each spoke */}
+                  <line x1="400" y1="145" x2="130" y2="60" stroke="url(#line-grad)" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.4" />
+                  <line x1="400" y1="145" x2="670" y2="60" stroke="url(#line-grad)" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.4" />
+                  <line x1="400" y1="145" x2="130" y2="340" stroke="url(#line-grad)" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.4" />
+                  <line x1="400" y1="145" x2="670" y2="340" stroke="url(#line-grad)" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.4" />
+                  {/* Pulse dots on lines */}
+                  <circle r="3" fill="#D4F87B" opacity="0.8">
+                    <animateMotion dur="3s" repeatCount="indefinite" path="M400,145 L130,60" />
+                  </circle>
+                  <circle r="3" fill="#D4F87B" opacity="0.8">
+                    <animateMotion dur="3.5s" repeatCount="indefinite" path="M400,145 L670,60" />
+                  </circle>
+                  <circle r="3" fill="#00e5cc" opacity="0.8">
+                    <animateMotion dur="2.8s" repeatCount="indefinite" path="M400,145 L130,340" />
+                  </circle>
+                  <circle r="3" fill="#00e5cc" opacity="0.8">
+                    <animateMotion dur="3.2s" repeatCount="indefinite" path="M400,145 L670,340" />
+                  </circle>
+                  <defs>
+                    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#D4F87B" stopOpacity="0.6" />
+                      <stop offset="100%" stopColor="#00e5cc" stopOpacity="0.6" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+                {/* Center Hub — Orchestrator */}
+                <div className="relative z-10 mx-auto mb-8 max-w-sm">
+                  <div className="rounded-[24px] border border-[var(--brand-lime)]/30 bg-[var(--brand-lime)]/10 p-5 text-center backdrop-blur-sm">
+                    <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--brand-lime)] shadow-[0_0_30px_rgba(212,248,123,0.3)]">
+                      <Brain className="h-6 w-6 text-slate-950" />
+                    </div>
+                    <h3 className="font-display text-xl tracking-[-0.03em] text-white">{t("agentOrchestrator")}</h3>
+                    <p className="mt-1.5 text-xs leading-5 text-white/50">{t("agentOrchestratorDesc")}</p>
+                  </div>
+                </div>
+
+                {/* Spoke Agents — 2x2 grid */}
+                <div className="relative z-10 grid gap-4 sm:grid-cols-2">
+                  {[
+                    { icon: TrendingUp, name: t("agentSales"), desc: t("agentSalesDesc"), borderColor: "border-blue-500/30", iconBg: "bg-blue-500/20", iconColor: "text-blue-400", glow: "shadow-[0_0_20px_rgba(59,130,246,0.15)]" },
+                    { icon: Headphones, name: t("agentSupport"), desc: t("agentSupportDesc"), borderColor: "border-purple-500/30", iconBg: "bg-purple-500/20", iconColor: "text-purple-400", glow: "shadow-[0_0_20px_rgba(168,85,247,0.15)]" },
+                    { icon: Workflow, name: t("agentOps"), desc: t("agentOpsDesc"), borderColor: "border-amber-500/30", iconBg: "bg-amber-500/20", iconColor: "text-amber-400", glow: "shadow-[0_0_20px_rgba(245,158,11,0.15)]" },
+                    { icon: Megaphone, name: t("agentMarketing"), desc: t("agentMarketingDesc"), borderColor: "border-emerald-500/30", iconBg: "bg-emerald-500/20", iconColor: "text-emerald-400", glow: "shadow-[0_0_20px_rgba(16,185,129,0.15)]" },
+                  ].map((agent, i) => {
+                    const Icon = agent.icon;
+                    return (
+                      <motion.div
+                        key={agent.name}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+                        className={`rounded-[20px] border ${agent.borderColor} bg-white/[0.04] p-5 backdrop-blur-sm ${agent.glow}`}
+                      >
+                        <div className="flex items-start gap-3">
+                          <div className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[12px] ${agent.iconBg}`}>
+                            <Icon className={`h-5 w-5 ${agent.iconColor}`} />
+                          </div>
+                          <div>
+                            <h4 className="font-display text-lg tracking-[-0.02em] text-white">{agent.name}</h4>
+                            <p className="mt-1 text-xs leading-5 text-white/40">{agent.desc}</p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+
+                {/* Data flow labels */}
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-[10px] uppercase tracking-[0.25em] text-white/25">
+                  <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-lime)]" /> Data flows</span>
+                  <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-teal)]" /> Actions trigger</span>
+                  <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white/40" /> Live</span>
+                </div>
+              </div>
+            </SurfaceCard>
+          </Reveal>
+        </MarketingContainer>
+      </section>
 
       {/* ═══ PROBLEMS ══════════════════════════════════════ */}
       <section className="py-14 sm:py-20">
