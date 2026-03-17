@@ -16,9 +16,9 @@ export const translations: Translations = {
     getInTouch: "Get in Touch",
 
     // Hero Section
-    heroTitle: "Make More Money,",
-    heroTitleHighlight: "Work Less",
-    heroSubtitle: "Montreal AI automation specialists helping SME founders reduce workload by 70% and boost revenue by 40% through intelligent automation.",
+    heroTitle: "Time Is Priceless.",
+    heroTitleHighlight: "We Give You More.",
+    heroSubtitle: "Every executive — every size, every level, every background — lacks one thing: time. AI automation that gives you the 48-hour day you've always needed.",
     workloadReduced: "Workload Reduced",
     revenueIncrease: "Revenue Increase",
     weeksGoLive: "Weeks Go-Live",
@@ -465,11 +465,11 @@ export const translations: Translations = {
     backToBlog: "Back to Blog",
 
     // About page
-    aboutTitle: "Entrepreneur to",
-    aboutSubtitle: "Entrepreneur.",
-    aboutDescription: "We've been in your shoes. Working 80-hour weeks, drowning in our own success, until AI automation changed everything.",
+    aboutTitle: "We Sell Time",
+    aboutSubtitle: "To Executives.",
+    aboutDescription: "You'd give the world for a 48-hour day. That's what we promise, and that's what we deliver. AI automation that multiplies your productivity and efficiency — personally and across your entire business.",
     aboutCompanyTitle: "About Minecore Group",
-    aboutCompanySubtitle: "Founded in 2024 by an entrepreneur who lived the transformation firsthand.",
+    aboutCompanySubtitle: "Founded in 2024 by an executive who refused to accept that time was the one thing money couldn't buy.",
     workWithUs: "Work With Us",
 
     // Contact
@@ -1139,9 +1139,9 @@ export const translations: Translations = {
     getInTouch: "Contactez-nous",
 
     // Hero Section
-    heroTitle: "Gagnez plus d'argent,",
-    heroTitleHighlight: "Travaillez moins",
-    heroSubtitle: "Spécialistes en automatisation IA de Montréal aidant les fondateurs de PME à réduire leur charge de travail de 70% et à augmenter leurs revenus de 40% grâce à l'automatisation intelligente.",
+    heroTitle: "Le temps n'a pas de prix.",
+    heroTitleHighlight: "On vous en donne plus.",
+    heroSubtitle: "Chaque dirigeant — peu importe la taille, le niveau ou le parcours — manque d'une seule chose : le temps. L'automatisation IA qui vous donne la journée de 48 heures dont vous avez toujours eu besoin.",
     workloadReduced: "Charge de travail réduite",
     revenueIncrease: "Augmentation des revenus",
     weeksGoLive: "Semaines de mise en ligne",
@@ -1588,11 +1588,11 @@ export const translations: Translations = {
     backToBlog: "Retour au blog",
 
     // About page
-    aboutTitle: "Entrepreneur à",
-    aboutSubtitle: "Entrepreneur.",
-    aboutDescription: "Nous avons été dans vos chaussures. Travaillant 80 heures par semaine, nous noyant dans notre propre succès, jusqu'à ce que l'automatisation IA change tout.",
+    aboutTitle: "On vend du temps",
+    aboutSubtitle: "aux dirigeants.",
+    aboutDescription: "Vous donneriez tout pour une journée de 48 heures. C'est ce qu'on promet, et c'est ce qu'on livre. L'automatisation IA qui multiplie votre productivité et votre efficacité — personnellement et à travers toute votre entreprise.",
     aboutCompanyTitle: "À propos de Minecore Group",
-    aboutCompanySubtitle: "Fondé en 2024 par un entrepreneur qui a vécu la transformation de première main.",
+    aboutCompanySubtitle: "Fondé en 2024 par un dirigeant qui a refusé d'accepter que le temps soit la seule chose que l'argent ne pouvait pas acheter.",
     workWithUs: "Travaillez avec nous",
 
     // Contact
