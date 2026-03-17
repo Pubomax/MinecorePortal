@@ -130,9 +130,9 @@ export default function Home() {
           </Link>
         }
         stats={[
-          { label: t("setupFees"), value: "990$ - 1 900$" },
-          { label: t("monthlyPlans"), value: t("from500PerMonth") },
-          { label: t("launchSpeed"), value: "2-3 weeks" },
+          { label: t("pricingModelLabel"), value: t("pricingModelValue") },
+          { label: t("commitmentLabel"), value: t("commitmentValue") },
+          { label: t("launchSpeed"), value: "2-3 " + t("weeksSuffix") },
         ]}
         aside={
           <SuitePreview
@@ -385,9 +385,9 @@ export default function Home() {
                   <WindowChrome label="Kommo CRM" />
                   <div className="mb-4 grid grid-cols-3 gap-2.5">
                     {[
-                      { stage: "New", count: 3, value: "$47.8K" },
-                      { stage: "Qualifying", count: 3, value: "$28.2K" },
-                      { stage: "Won ✓", count: 3, value: "$19.5K" },
+                      { stage: "New", count: 3, value: "3 leads" },
+                      { stage: "Qualifying", count: 3, value: "3 leads" },
+                      { stage: "Won ✓", count: 3, value: "3 leads" },
                     ].map((col) => (
                       <div key={col.stage}>
                         <div className="mb-2 text-[10px] text-white/25">{col.stage}</div>

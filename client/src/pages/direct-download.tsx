@@ -43,7 +43,7 @@ Geographic Focus
 Competitive Advantages
 - Entrepreneur-to-Entrepreneur Understanding: We've walked in your shoes and understand the unique challenges of running a lean operation.
 - Rapid Implementation: Our streamlined approach delivers working solutions in weeks, not months.
-- Cost-Effective Solutions: No enterprise-level complexity or pricing. Solutions designed for growing businesses.
+- Cost-Effective Solutions: No enterprise-level complexity. Solutions designed for growing businesses.
 - Ongoing Partnership: We grow with you, continuously optimizing and expanding your automation ecosystem.
 
 Core Service Portfolio
@@ -129,7 +129,7 @@ Target Market & Ideal Clients
 Ideal Client Profile
 
 Business Size & Revenue:
-- Annual Revenue: $100K - $10M
+- Business Stage: Growth/Scale Phase
 - Employee Count: 5-100 employees
 - Business Stage: Growth/Scale Phase
 - Technology Adoption: Early to Mainstream
@@ -162,42 +162,15 @@ Not Ready:
 - Strong resistance to change
 - Unrealistic timeline expectations
 
-PRICING & PACKAGES
+PRICING
 
-VELOCITY Package - $500/month
-- 1-2 core automations
-- Basic AI integration
-- Email/calendar automation
-- Monthly review
-- Email support
-Best for: Solo founders, small teams
+Every business is different. We build custom solutions tailored to your specific needs, processes, and goals.
 
-ACCELERATE Package - $1,500/month (MOST POPULAR)
-- 3-5 automations
-- Advanced AI/ML capabilities
-- CRM & sales automation
-- Marketing automation suite
-- Bi-weekly strategy sessions
-- Priority support
-Best for: Growing SMEs
-
-DOMINATE Package - $3,500/month
-- Unlimited automation workflows
-- Custom AI solutions
-- Enterprise-level integrations
-- Advanced analytics & reporting
-- Weekly strategy calls
-- Dedicated account manager
-- 24/7 priority support
-Best for: Scale-ups and enterprises
-
-ROI Calculator Example:
-- Time Saved: $2,000 (40 hours @ $50/hr)
-- Efficiency Gains: $1,500 (Process optimization)
-- Revenue Increase: $3,000 (New opportunities)
-- Total Monthly ROI: $6,500
-- Investment: $1,500
-- Net ROI: 433%
+Book a free consultation to receive a personalized quote:
+- No cookie-cutter packages
+- Pricing based on your actual requirements
+- Month-to-month, no long-term contracts
+- ROI-focused: every dollar must prove its value
 
 GUARANTEES & TERMS
 
@@ -307,7 +280,7 @@ CONTACT INFORMATION
 Website: minecoregroup.com
 Email: info@minecoregroup.com
 Phone: Contact through website
-Address: 3580 Blvd Saint-Elzear Ouest, Laval, QC H7P 0A2
+Address: 1655 rue du grand pic, Laval, QC H7P 0K8
 
 Services Available: English & French
 Service Area: Montreal, Quebec (Primary) | North America (Remote)

@@ -31,7 +31,7 @@ CORE VALUES:
 
 TARGET MARKET:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Sweet Spot: $100K-$10M revenue SMEs
+Sweet Spot: SMEs ready to scale
 Location: Montreal, Quebec
 Service Area: North America
 Industries: All sectors with business processes
@@ -39,7 +39,7 @@ Industries: All sectors with business processes
 KEY DIFFERENTIATORS:
 • Entrepreneur-to-entrepreneur mindset
 • Rapid implementation: weeks, not months
-• No enterprise-level complexity or pricing
+• No enterprise-level complexity
 • Ongoing partnership approach
 
 SERVICE PORTFOLIO:
@@ -69,38 +69,16 @@ SERVICE PORTFOLIO:
    • Financial process automation
    Impact: 50-80% cost reduction, 20-25 hours/week saved
 
-PRICING PACKAGES:
+PRICING:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-💫 VELOCITY - $500/month
-   • 1-2 core automations
-   • Basic AI integration
-   • Email/calendar automation
-   • Monthly review • Email support
-   Best for: Solo founders, small teams
+Every business is different. We build custom solutions tailored to your specific needs.
 
-🚀 ACCELERATE - $1,500/month (MOST POPULAR)
-   • 3-5 automations
-   • Advanced AI/ML
-   • CRM & sales automation
-   • Marketing suite
-   • Bi-weekly reporting • Priority support
-   Best for: Growing SMEs
-
-⚡ DOMINATE - $3,500/month
-   • Unlimited workflows
-   • Custom AI solutions
-   • Enterprise integration
-   • Advanced analytics
-   • Weekly strategy calls • Dedicated manager • 24/7 support
-   Best for: Scale-ups, enterprises
-
-ROI EXAMPLE:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Time Saved: $2,000 (40 hours @ $50/hr)
-Efficiency Gain: $1,500 (Process optimization)  
-Revenue Increase: $3,000 (New opportunities)
-→ Total ROI: 400% in 90 days
+Book a free consultation to receive a personalized quote:
+• No cookie-cutter packages
+• Pricing based on your actual requirements
+• Month-to-month, no long-term contracts
+• ROI-focused: every dollar must prove its value
 
 IMPLEMENTATION PROCESS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -125,7 +103,7 @@ CONTACT & NEXT STEPS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🌐 Website: minecoregroup.com
 📧 Free Consultation: Book online at minecoregroup.com/contact
-📍 Address: 3580 Blvd Saint-Elzear Ouest, Laval, QC H7P 0A2
+📍 Address: 1655 rue du grand pic, Laval, QC H7P 0K8
 🗣️ Languages: English & French
 
 Ready to cut your workload by 70% and boost revenue by 40%?
@@ -190,7 +168,7 @@ Book your free consultation today.
                 </div>
                 <div className="text-center">
                   <Badge className="mb-2">Complete Info</Badge>
-                  <p className="text-sm text-gray-600">All services, pricing, and contact details included</p>
+                  <p className="text-sm text-gray-600">All services and contact details included</p>
                 </div>
               </div>
             </CardContent>

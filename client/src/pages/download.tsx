@@ -36,12 +36,12 @@ Market Presence:
 - Location: Montreal, Quebec
 - Service Area: North America
 - Target: All business types and industries
-- Sweet Spot: $100K-$10M revenue SMEs
+- Sweet Spot: SMEs ready to scale
 
 Key Differentiators:
 - Entrepreneur-to-entrepreneur mindset
 - Rapid implementation: weeks, not months
-- No enterprise-level complexity or pricing
+- No enterprise-level complexity
 - Ongoing partnership approach
 
 SERVICE PORTFOLIO & CAPABILITIES
@@ -123,40 +123,15 @@ IMPLEMENTATION PROCESS & METHODOLOGY
    Go-live, team training, documentation, onboarding
    Deliverable: Live systems, user guides
 
-PRICING, PACKAGES, AND ROI GUARANTEES
+PRICING
 
-VELOCITY - $500/month
-- 1-2 core automations
-- Basic AI integration
-- Email/calendar automation
-- Monthly review
-- Email support
-Best for: Solo founders, small teams
+Every business is different. We build custom solutions tailored to your specific needs, processes, and goals.
 
-ACCELERATE - $1,500/month (MOST POPULAR)
-- 3-5 automations
-- Advanced AI/ML
-- CRM & sales automation
-- Marketing suite
-- Bi-weekly reporting
-- Priority support
-Best for: Growing SMEs
-
-DOMINATE - $3,500/month
-- Unlimited workflows
-- Custom AI solutions
-- Enterprise integration
-- Advanced analytics
-- Weekly strategy calls
-- Dedicated manager
-- 24/7 support
-Best for: Scale-ups, enterprises
-
-ROI Calculator Example:
-- Time Saved: $2,000 (40 hours @ $50/hr)
-- Efficiency Gain: $1,500 (Process optimization)
-- Revenue Increase: $3,000 (New opportunities)
-- Total ROI: 400% in 90 days
+Book a free consultation to receive a personalized quote:
+- No cookie-cutter packages
+- Pricing based on your actual requirements
+- Month-to-month, no long-term contracts
+- ROI-focused: every dollar must prove its value
 
 GUARANTEES & TERMS
 
@@ -173,7 +148,7 @@ Flexible Terms:
 IDEAL CLIENT PROFILE & READINESS
 
 Best Fit:
-- $100K-$10M revenue
+- Growing revenue
 - 5-100 employees
 - Growth/scaling phase
 - Ready for change
@@ -288,7 +263,7 @@ Upcoming: Data Marketplace`;
                   <ul className="text-left space-y-2 text-gray-700">
                     <li>• Executive summary and key metrics</li>
                     <li>• Service portfolio and capabilities</li>
-                    <li>• Pricing packages and guarantees</li>
+                    <li>• Custom pricing approach</li>
                     <li>• Implementation methodology</li>
                     <li>• Technology stack details</li>
                     <li>• FAQs and client profiles</li>

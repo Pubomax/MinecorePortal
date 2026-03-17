@@ -867,8 +867,8 @@ export const translations: Translations = {
     productOperatorFeature2: "CRM setup + lead scoring (Kommo)",
     productOperatorFeature3: "AI knowledge base (RAG) for 24/7 customer support",
     productOperatorFeature4: "Daily reporting + fully managed operations",
-    productOperatorPricing: "From $2,499/month",
-    productOperatorSetup: "+ $2,000 one-time setup",
+    productOperatorPricing: "Custom Quote",
+    productOperatorSetup: "Tailored to your needs",
     productOperatorCta: "Book a strategy call",
     productOperatorGuarantee: "30-day lead capture guarantee",
 
@@ -880,8 +880,8 @@ export const translations: Translations = {
     productExecFeature1: "Configured with your business context and knowledge base",
     productExecFeature2: "Priority clarity, commitment tracking, decision support",
     productExecFeature3: "Runs on your machine or our managed server",
-    productExecPricing: "From $499/month",
-    productExecSetup: "+ $500 one-time setup",
+    productExecPricing: "Custom Quote",
+    productExecSetup: "Tailored to your needs",
     productExecCta: "Book a strategy call",
 
     // Product: Civic
@@ -2012,8 +2012,8 @@ export const translations: Translations = {
     productOperatorFeature2: "Configuration CRM + scoring des prospects (Kommo)",
     productOperatorFeature3: "Base de connaissances IA (RAG) pour support client 24/7",
     productOperatorFeature4: "Reporting quotidien + opérations entièrement gérées",
-    productOperatorPricing: "Dès 2 499 $/mois",
-    productOperatorSetup: "+ 2 000 $ de configuration",
+    productOperatorPricing: "Soumission personnalisée",
+    productOperatorSetup: "Adapté à vos besoins",
     productOperatorCta: "Réserver un appel stratégique",
     productOperatorGuarantee: "Garantie capture de prospects 30 jours",
 
@@ -2025,8 +2025,8 @@ export const translations: Translations = {
     productExecFeature1: "Configuré avec le contexte et la base de connaissances de votre entreprise",
     productExecFeature2: "Clarté des priorités, suivi des engagements, aide à la décision",
     productExecFeature3: "Fonctionne sur votre machine ou notre serveur géré",
-    productExecPricing: "Dès 499 $/mois",
-    productExecSetup: "+ 500 $ de configuration",
+    productExecPricing: "Soumission personnalisée",
+    productExecSetup: "Adapté à vos besoins",
     productExecCta: "Réserver un appel stratégique",
 
     // Product: Civic
